@@ -128,6 +128,10 @@
     <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin.png" />
     <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin%402x.png" />
     <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin%403x.png" />
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen.png" />
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen%402x.png" />
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -154,6 +158,7 @@
     <Folder Include="Assets.xcassets\appleLogo.imageset\" />
     <Folder Include="Assets.xcassets\backgroundLogin.imageset\" />
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\backgroundLaunchScreen.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\SplashScreen.storyboard" />
