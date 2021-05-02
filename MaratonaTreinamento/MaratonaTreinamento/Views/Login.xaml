@@ -8,9 +8,9 @@
         <Image Source="backgroundLogin" Aspect="AspectFill" Opacity=".4" />
         <Grid RowDefinitions="*, auto, auto, auto, auto, auto, auto, auto, *, auto"
               Padding="30, 10">
-            <Label Text="Comece a praticar agora! " FontSize="24" FontAttributes="Bold" Grid.Row="1" TextColor="White"
+            <Label x:Name="firstText" Text="Comece a praticar agora! " FontSize="24" FontAttributes="Bold" Grid.Row="1" TextColor="White"
              HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
-            <Label Text="Faça o seu Login " FontSize="24" FontAttributes="Bold" Grid.Row="2" TextColor="White"
+            <Label x:Name="secondText" Text="Faça o seu Login " FontSize="24" FontAttributes="Bold" Grid.Row="2" TextColor="White"
              HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
             <Frame x:Name="frameGoogle" StyleClass="EntryFrame" BackgroundColor="#d34836" Grid.Row="3"
                    CornerRadius="20" HorizontalOptions="FillAndExpand" Margin="0, 15, 0, 0">
@@ -84,14 +84,14 @@
                    <TapGestureRecognizer Tapped="SingInWithApple" />
                  </Frame.GestureRecognizers>
             </Frame>
-            <Button Text="ACESSAR" CornerRadius="20" FontSize="13" FontAttributes="Bold" BorderWidth=".5" TranslationY="2"
+            <Button x:Name="buttonLogin" Text="ACESSAR" CornerRadius="20" FontSize="13" FontAttributes="Bold" BorderWidth=".5" TranslationY="2"
                     BackgroundColor="#0079D9" TextColor="White" Grid.Row="6" Clicked="EnterLogin"
                     Margin="0, 15, 0, 0" HeightRequest="45">
             </Button>
-            <Button Text="CADASTRAR" CornerRadius="20" FontSize="13" FontAttributes="Bold" TranslationY="2"
+            <Button x:Name="buttonCadastre" Text="CADASTRAR" CornerRadius="20" FontSize="13" FontAttributes="Bold" TranslationY="2"
                     BackgroundColor="#004373" TextColor="White" Grid.Row="7" Clicked="NewUser"
                     Margin="0, 15, 0, 0" HeightRequest="45"/>
-            <Label Text="Versão 1.0" FontSize="14" FontAttributes="Bold" TextColor="White"
+            <Label x:Name="versionText" Text="Versão 1.0" FontSize="14" FontAttributes="Bold" TextColor="White"
                    HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
                    Grid.Row="9" VerticalOptions="Start"/>
         </Grid>
