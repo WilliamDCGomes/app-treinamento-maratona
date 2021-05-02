@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MaratonaTreinamento.Views.Login"
+    BackgroundColor="#0D1117"
+    ><Grid>
+        <Image Source="backgroundLogin" Aspect="AspectFill" Opacity=".4" />
+        <Grid RowDefinitions="*, auto, auto, auto, auto, auto, auto, auto, *, auto"
+              Padding="30, 10">
+            <Label Text="Comece a praticar agora! " FontSize="24" FontAttributes="Bold" Grid.Row="1" TextColor="White"
+             HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Faça o seu Login " FontSize="24" FontAttributes="Bold" Grid.Row="2" TextColor="White"
+             HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            <Frame x:Name="frameGoogle" StyleClass="EntryFrame" BackgroundColor="#d34836" Grid.Row="3"
+                   CornerRadius="20" HorizontalOptions="FillAndExpand" Margin="0, 15, 0, 0">
+                 <Grid>
+                     <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="10*"/>
+                         <ColumnDefinition Width="80*"/>
+                     </Grid.ColumnDefinitions>
+                     <ImageButton TranslationX="3" Source="googleLogo" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" Clicked="SingInWithGoogle" />
+                     <Label Text="ENTRAR COM GOOGLE" FontSize="13" FontAttributes="Bold" TextColor="White" TranslationY="2"
+                            VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.ColumnSpan="2" >
+                         <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="SingInWithGoogle"/>
+                         </Label.GestureRecognizers>
+                     </Label>
+                 </Grid>
+                 <Frame.HeightRequest>
+                     <OnPlatform x:TypeArguments="x:Double"
+                           iOS="25"
+                           Android="45" />
+                 </Frame.HeightRequest>
+                 <Frame.GestureRecognizers>
+                   <TapGestureRecognizer Tapped="SingInWithGoogle" />
+                 </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="frameFace" StyleClass="EntryFrame" BackgroundColor="#3B5998" Grid.Row="4"
+                   CornerRadius="20" HorizontalOptions="FillAndExpand" Margin="0, 15, 0, 0">
+                 <Grid>
+                     <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="10*"/>
+                         <ColumnDefinition Width="80*"/>
+                     </Grid.ColumnDefinitions>
+                     <ImageButton TranslationX="3" Source="faceLogo" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" Clicked="SingInWithFacebook" />
+                     <Label Text="ENTRAR COM FACEBOOK" FontSize="13" FontAttributes="Bold" TextColor="White" TranslationY="2"
+                            VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.ColumnSpan="2" >
+                         <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="SingInWithFacebook"/>
+                         </Label.GestureRecognizers>
+                     </Label>
+                 </Grid>
+                 <Frame.HeightRequest>
+                     <OnPlatform x:TypeArguments="x:Double"
+                           iOS="25"
+                           Android="45" />
+                 </Frame.HeightRequest>
+                 <Frame.GestureRecognizers>
+                   <TapGestureRecognizer Tapped="SingInWithFacebook" />
+                 </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="frameApple" StyleClass="EntryFrame" BackgroundColor="White" Grid.Row="5"
+                   CornerRadius="20" HorizontalOptions="FillAndExpand" Margin="0, 15, 0, 0">
+                 <Grid>
+                     <Grid.ColumnDefinitions>
+                         <ColumnDefinition Width="10*"/>
+                         <ColumnDefinition Width="80*"/>
+                     </Grid.ColumnDefinitions>
+                     <ImageButton TranslationX="3" Source="appleLogo" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" Clicked="SingInWithApple" />
+                     <Label Text="ENTRAR COM CONTA APPLE" FontSize="13" FontAttributes="Bold" TextColor="Black" TranslationY="2"
+                            VerticalTextAlignment="End" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.ColumnSpan="2" >
+                         <Label.GestureRecognizers>
+                             <TapGestureRecognizer Tapped="SingInWithApple"/>
+                         </Label.GestureRecognizers>
+                     </Label>
+                 </Grid>
+                 <Frame.HeightRequest>
+                     <OnPlatform x:TypeArguments="x:Double"
+                           iOS="25"
+                           Android="45" />
+                 </Frame.HeightRequest>
+                 <Frame.GestureRecognizers>
+                   <TapGestureRecognizer Tapped="SingInWithApple" />
+                 </Frame.GestureRecognizers>
+            </Frame>
+            <Button Text="ACESSAR" CornerRadius="20" FontSize="13" FontAttributes="Bold" BorderWidth=".5" TranslationY="2"
+                    BackgroundColor="#0079D9" TextColor="White" Grid.Row="6" Clicked="EnterLogin"
+                    Margin="0, 15, 0, 0" HeightRequest="45">
+            </Button>
+            <Button Text="CADASTRAR" CornerRadius="20" FontSize="13" FontAttributes="Bold" TranslationY="2"
+                    BackgroundColor="#004373" TextColor="White" Grid.Row="7" Clicked="NewUser"
+                    Margin="0, 15, 0, 0" HeightRequest="45"/>
+            <Label Text="Versão 1.0" FontSize="14" FontAttributes="Bold" TextColor="White"
+                   HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                   Grid.Row="9" VerticalOptions="Start"/>
+        </Grid>
+    </Grid>
+</ContentPage>
