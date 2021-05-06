@@ -142,4 +142,7 @@
   <ItemGroup>
     <InterfaceDefinition Include="Resources\SplashScreen.storyboard" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\giphy.gif" />
+  </ItemGroup>
 </Project>

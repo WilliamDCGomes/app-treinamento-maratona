@@ -2,8 +2,28 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MaratonaTreinamento.Views.LoginScreen">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    x:Class="MaratonaTreinamento.Views.LoginScreen"
+    BackgroundColor="#0D1117"
+    >
+    <Grid RowDefinitions="200, auto, auto, auto, auto, auto, auto" BackgroundColor="#0D1117">
+        <Image Margin="0, 15" Source="giphy" IsAnimationPlaying="True" HorizontalOptions="Center"/>
+        <Label Text="FAÇA O LOGIN" Grid.Row="1" TextColor="White" HorizontalOptions="CenterAndExpand"
+               FontSize="48" Margin="0, 0, 0, 15" FontAttributes="Bold"/>
+        <Frame StyleClass="EntryFrame" Grid.Row="2" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+               BorderColor="White" Padding="5, 0" CornerRadius="15">
+            <Entry Placeholder="Digite seu login" Grid.Row="1" HorizontalOptions="FillAndExpand"
+                   PlaceholderColor="White" FontSize="24"/>
+        </Frame>
+        <Frame StyleClass="EntryFrame" Grid.Row="3" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+               BorderColor="White" Padding="5, 0" CornerRadius="15">
+            <Entry Placeholder="Digite sua senha" IsPassword="True" Grid.Row="1" HorizontalOptions="FillAndExpand"
+                   PlaceholderColor="White" FontSize="24" />
+        </Frame>
+        <Button Text="Logar" Grid.Row="4" BackgroundColor="Green" Margin="15, 0, 15, 15"
+                FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+        <Button Text="Cadastrar" Grid.Row="5" BackgroundColor="Blue" Margin="15, 0, 15, 5"
+                FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+        <Label Text="Esqueci a senha" TextColor="White" FontSize="15"
+               Grid.Row="6" Margin="15, 0" HorizontalOptions="End" FontAttributes="Bold"/>
+    </Grid>
 </ContentPage>
