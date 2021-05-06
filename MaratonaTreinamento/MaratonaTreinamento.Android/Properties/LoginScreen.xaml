@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MaratonaTreinamento.Views.LoginScreen">
+    <ContentPage.Content>
+        <Grid Margin="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="background" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <BoxView Grid.RowSpan="5" BackgroundColor="Black" Opacity=".5"/>
+            <Frame StyleClass="EntryFrame" Grid.Row="0" BackgroundColor="Transparent"  HasShadow="True" HeightRequest="70" WidthRequest="70" CornerRadius="40" HorizontalOptions="Center" VerticalOptions="End" Padding="10">
+                <Image Source="iconLogin" />
+            </Frame>
+            <Label Grid.Row="1" Text="Peça já a sua Comida!" FontSize="28" TranslationY="-23" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"/>
+            <Label Grid.Row="2" Text="Fácil, Rápido e Prático!" FontSize="30" TranslationY="-40" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"/>
+            <Grid Grid.Row="3" VerticalOptions="StartAndExpand" Margin="20, 0" RowSpacing="10" TranslationY="-40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="45" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="85*"/>
+                </Grid.ColumnDefinitions>
+                <Frame x:Name="frameGoogle" StyleClass="EntryFrame" BackgroundColor="#d34836" Grid.Row="0" CornerRadius="25" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="80*"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton TranslationX="3" Source="googleLogo" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" Clicked="SingInWithGoogle" />
+                        <Label Text="ENTRAR COM GOOGLE" FontSize="13" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.ColumnSpan="2" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SingInWithGoogle"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SingInWithGoogle" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame x:Name="frameFacebook" StyleClass="EntryFrame" BackgroundColor="#3F65A6" Grid.Row="1" CornerRadius="25" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="80*"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton TranslationX="8" Source="faceLogo" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" Clicked="SingInWithFacebook" />
+                        <Label Text="ENTRAR COM FACEBOOK" FontSize="13" FontAttributes="Bold" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.ColumnSpan="2" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SingInWithFacebook"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SingInWithFacebook" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Button Text="ACESSAR" CornerRadius="25" FontSize="13" FontAttributes="Bold" BorderWidth=".5" BackgroundColor="#B30000" TextColor="White" Grid.Row="2" Grid.ColumnSpan="3" Clicked="EnterLogin"/>
+                <Button Text="CADASTRAR" CornerRadius="25" FontSize="13" FontAttributes="Bold" BackgroundColor="White" TextColor="#B30000" Grid.Row="3" Grid.ColumnSpan="3" Clicked="NewUser"/>
+            </Grid>
+            <Label FontSize="12" TranslationY="-10" Grid.Row="4" FontAttributes="Bold" Text="Versão 1.1" TextColor="White" VerticalOptions="EndAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -77,7 +77,7 @@ namespace MaratonaTreinamento.Views
 
         void EnterLogin(System.Object sender, System.EventArgs e)
         {
-
+            App.Current.MainPage = new NavigationPage(new LoginScreen());
         }
 
         void NewUser(System.Object sender, System.EventArgs e)
