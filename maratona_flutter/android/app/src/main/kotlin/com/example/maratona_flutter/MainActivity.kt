@@ -1,4 +1,4 @@
-package com.example.app_treinamento_maratona
+package com.example.maratona_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 
