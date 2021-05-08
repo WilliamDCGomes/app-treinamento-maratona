@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MaratonaTreinamento.Views.Login"
+    NavigationPage.HasNavigationBar="False"
     BackgroundColor="#0D1117"
     ><Grid>
         <Image Source="backgroundLogin" Aspect="AspectFill" Opacity=".4" />

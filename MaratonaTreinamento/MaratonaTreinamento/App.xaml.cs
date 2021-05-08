@@ -11,9 +11,10 @@ namespace MaratonaTreinamento
         {
             InitializeComponent();
 
-            MainPage = new Login();
-            MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.FromHex("#0051C1"));
-            MainPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
+            MainPage = new NavigationPage(new Login())
+            {
+                BarBackgroundColor = Color.FromHex("#292C31"),
+            };
         }
 
         protected override void OnStart()
