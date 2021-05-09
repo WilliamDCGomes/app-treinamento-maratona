@@ -14,7 +14,7 @@ using Android.Widget;
 
 namespace MaratonaTreinamento.Droid
 {
-    [Activity(Label = "MaratonaTreinamento", Theme = "@style/MainTheme.Splash", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+    [Activity(Label = "You Can Code", Theme = "@style/MainTheme.Splash", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class SplashActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -111,6 +111,10 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen.png" />
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -138,11 +142,9 @@
     <Folder Include="Assets.xcassets\backgroundLogin.imageset\" />
     <Folder Include="Resources\" />
     <Folder Include="Assets.xcassets\backgroundLaunchScreen.imageset\" />
+    <Folder Include="Assets.xcassets\logoLoginScreen.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\SplashScreen.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\giphy.gif" />
   </ItemGroup>
 </Project>

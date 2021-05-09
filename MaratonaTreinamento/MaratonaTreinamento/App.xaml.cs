@@ -13,7 +13,8 @@ namespace MaratonaTreinamento
 
             MainPage = new NavigationPage(new Login())
             {
-                BarBackgroundColor = Color.FromHex("#292C31"),
+                BarBackgroundColor = Color.FromHex("#0D1117"),
+                BarTextColor = Color.White
             };
         }
 

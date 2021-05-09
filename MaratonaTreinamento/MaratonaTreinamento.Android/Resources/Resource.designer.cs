@@ -11692,22 +11692,22 @@ namespace MaratonaTreinamento.Droid
 			public const int faceLogo = 2131165295;
 			
 			// aapt resource value: 0x7F070070
-			public const int giphy = 2131165296;
+			public const int googleLogo = 2131165296;
 			
 			// aapt resource value: 0x7F070071
-			public const int googleLogo = 2131165297;
+			public const int ic_mtrl_checked_circle = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int ic_mtrl_checked_circle = 2131165298;
+			public const int ic_mtrl_chip_checked_black = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int ic_mtrl_chip_checked_black = 2131165299;
+			public const int ic_mtrl_chip_checked_circle = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int ic_mtrl_chip_checked_circle = 2131165300;
+			public const int ic_mtrl_chip_close_circle = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int ic_mtrl_chip_close_circle = 2131165301;
+			public const int logoLoginScreen = 2131165301;
 			
 			// aapt resource value: 0x7F070076
 			public const int material_ic_calendar_black_24dp = 2131165302;

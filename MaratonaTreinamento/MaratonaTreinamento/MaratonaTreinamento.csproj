@@ -18,5 +18,6 @@
     <Folder Include="Model\" />
     <Folder Include="Views\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="FormattingClass\" />
   </ItemGroup>
 </Project>
