@@ -82,7 +82,7 @@ namespace MaratonaTreinamento.Views
 
         void NewUser(System.Object sender, System.EventArgs e)
         {
-
+            Navigation.PushAsync(new RegisterScreen());
         }
     }
 }
