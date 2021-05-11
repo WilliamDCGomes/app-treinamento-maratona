@@ -5,27 +5,32 @@
     xmlns:InputEntry="clr-namespace:MaratonaTreinamento.FormattingClass"
     x:Class="MaratonaTreinamento.Views.LoginScreen"
     Title="Login"
-    BackgroundColor="#292C31"
-    >
-    <Grid RowDefinitions="200, auto, auto, auto, auto, auto, auto" BackgroundColor="Transparent">
-        <Image Margin="0, 15" Source="logoLoginScreen" HorizontalOptions="CenterAndExpand"/>
-        <Label Text="FAÇA O LOGIN" Grid.Row="1" TextColor="White" HorizontalOptions="CenterAndExpand"
-               FontSize="48" Margin="0, 0, 0, 15" FontAttributes="Bold"/>
-        <Frame StyleClass="EntryFrame" Grid.Row="2" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-               BorderColor="White" Padding="5, 0" CornerRadius="15">
-            <Entry Placeholder="Digite seu login" Grid.Row="1" HorizontalOptions="FillAndExpand"
-                   PlaceholderColor="White" FontSize="32"/>
-        </Frame>
-        <Frame StyleClass="EntryFrame" Grid.Row="3" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-               BorderColor="White" Padding="5, 0" CornerRadius="15">
-            <InputEntry:CustomEntry Placeholder="Digite sua senha" IsPassword="True" Grid.Row="1" HorizontalOptions="FillAndExpand"
-                   PlaceholderColor="White" FontSize="32" />
-        </Frame>
-        <Button Text="Logar" Grid.Row="4" BackgroundColor="Green" Margin="15, 0, 15, 15"
-                FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
-        <Button Text="Cadastrar" Grid.Row="5" BackgroundColor="Blue" Margin="15, 0, 15, 5"
-                FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
-        <Label Text="Esqueci a senha" TextColor="White" FontSize="15"
-               Grid.Row="6" Margin="15, 0" HorizontalOptions="End" FontAttributes="Bold"/>
-    </Grid>
+    BackgroundColor="Black">
+
+    <ScrollView>
+        <Grid RowSpacing="0" Padding="0"  RowDefinitions="300, auto">
+            <Image Grid.Row="0" TranslationY="-30" TranslationX="20" Margin="0" Source="logoLoginScreen" HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="Black" Aspect="AspectFill"/>
+            <Grid Grid.Row="1" TranslationY="-110" RowDefinitions="auto, auto, auto, auto, auto, auto" BackgroundColor="Transparent">
+                <Label Text="FAÇA O LOGIN" Grid.Row="0" TextColor="White" HorizontalOptions="CenterAndExpand"
+                       FontSize="48" Margin="0, 0, 0, 15" FontAttributes="Bold"/>
+                <Frame StyleClass="EntryFrame" Grid.Row="1" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15">
+                    <InputEntry:CustomEntry Placeholder="Digite seu login" Grid.Row="1" HorizontalOptions="FillAndExpand"
+                           PlaceholderColor="White" FontSize="32" TextColor="White"/>
+                </Frame>
+                <Frame StyleClass="EntryFrame" Grid.Row="2" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15">
+                    <InputEntry:CustomEntry Placeholder="Digite sua senha" IsPassword="True" Grid.Row="1" HorizontalOptions="FillAndExpand"
+                           PlaceholderColor="White" FontSize="32" TextColor="White"/>
+                </Frame>
+                <Button Text="Logar" Grid.Row="3" BackgroundColor="Green" Margin="15, 0, 15, 15"
+                        FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+                <Button Text="Cadastrar" Grid.Row="4" BackgroundColor="Blue" Margin="15, 0, 15, 5"
+                        FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+                <Label Text="Esqueci a senha" TextColor="White" FontSize="15" HeightRequest="20"
+                       Grid.Row="5" Margin="15, 0" HorizontalOptions="End" FontAttributes="Bold"/>
+            </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>
