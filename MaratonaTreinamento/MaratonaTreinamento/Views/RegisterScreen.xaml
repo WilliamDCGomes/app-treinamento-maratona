@@ -2,6 +2,104 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MaratonaTreinamento.Views.RegisterScreen">
-    
+    xmlns:InputEntry="clr-namespace:MaratonaTreinamento.FormattingClass"
+    x:Class="MaratonaTreinamento.Views.RegisterScreen"
+    Title="Cadastro de Usuário"
+    BackgroundColor="#0D1117">
+    <ScrollView Padding="0" Margin="0">
+        <Grid RowDefinitions="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" BackgroundColor="#0D1117" Padding="15">
+            <Label Text="Insira suas informações" TextColor="White" FontSize="18"/>
+            <BoxView Grid.Row="1" Color="White" HeightRequest="2" Margin="0, 0, 0, 10"/>
+            <Frame StyleClass="EntryFrame" Grid.Row="2" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="Nome" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
+                                            IsSpellCheckEnabled="True" IsTextPredictionEnabled="True"
+                                            Keyboard="Chat"/>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="3" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="Sobrenome" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
+                                            IsSpellCheckEnabled="True" IsTextPredictionEnabled="True"
+                                            Keyboard="Chat"/>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="4" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="E-mail" Keyboard="Email" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
+                                            IsTextPredictionEnabled="True"/>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="5" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="Usuário"  MaxLength="10" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
+                                            IsTextPredictionEnabled="True" Keyboard="Chat"/>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="6" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                           BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
+                
+                    <InputEntry:CustomEntry Placeholder="Senha" IsPassword="True" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"/>
+                
+                    <Label Text="&#xf06e;" Grid.Column="1" FontSize="20" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
+                                        Android="fa-solid-900.ttf" 
+                                        iOS="Font Awesome 5 Free"/>
+                        </Label.FontFamily>
+                    </Label>
+                </Grid>
+            </Frame>
+            
+            <Frame StyleClass="EntryFrame" Grid.Row="7" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                   BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
+                    <InputEntry:CustomEntry Placeholder="Confirmar Senha" IsPassword="True" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"/>
+                    <Label Text="&#xf070;" Grid.Column="1" FontSize="20" TextColor="White">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
+                                        Android="fa-solid-900.ttf" 
+                                        iOS="Font Awesome 5 Free"/>
+                        </Label.FontFamily>
+                    </Label>
+                </Grid>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="8" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="Informe o nome da sua faculdade" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
+                                            IsTextPredictionEnabled="True" Keyboard="Chat"/>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="9" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="Informe o nome do seu curso" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
+                                            IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" Keyboard="Chat"/>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="10" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="Telefone" Keyboard="Telephone" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next">
+                        <InputEntry:CustomEntry.Behaviors>
+                            <InputEntry:MaskedBehavior Mask="(XXX) XXXX-XXXX" />
+                        </InputEntry:CustomEntry.Behaviors>
+                    </InputEntry:CustomEntry>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="11" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                    <InputEntry:CustomEntry Placeholder="Celular" Keyboard="Telephone" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go"
+                                            Completed="CustomEntry_Completed">
+                        <InputEntry:CustomEntry.Behaviors>
+                            <InputEntry:MaskedBehavior Mask="(XXX) XXXXX-XXXX" />
+                        </InputEntry:CustomEntry.Behaviors>
+                    </InputEntry:CustomEntry>
+            </Frame>
+            <Button Text="Cadastrar" Grid.Row="12" BackgroundColor="Green" Margin="15, 0, 15, 15"
+                        FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+        </Grid>
+    </ScrollView>
 </ContentPage>

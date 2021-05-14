@@ -11,5 +11,9 @@ namespace MaratonaTreinamento.Views
         {
             InitializeComponent();
         }
+
+        void CustomEntry_Completed(System.Object sender, System.EventArgs e)
+        {
+        }
     }
 }

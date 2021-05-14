@@ -343,12 +343,16 @@
     <Folder Include="Resources\mipmap-anydpi-v26\" />
     <Folder Include="Resources\mipmap-ldpi\" />
     <Folder Include="MaskComponentsAndroid\" />
+    <Folder Include="Assets\Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MaratonaTreinamento\MaratonaTreinamento.csproj">
       <Project>{3E5EAAB3-D461-4B8B-9CA0-B7C8E9A8FAFC}</Project>
       <Name>MaratonaTreinamento</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\fa-solid-900.ttf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
