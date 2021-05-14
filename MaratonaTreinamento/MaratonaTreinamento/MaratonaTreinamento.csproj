@@ -19,12 +19,8 @@
     <Folder Include="Views\" />
     <Folder Include="ViewModel\" />
     <Folder Include="FormattingClass\" />
-    <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\fa-solid-900.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\fa-solid-900.ttf" />
   </ItemGroup>
 </Project>

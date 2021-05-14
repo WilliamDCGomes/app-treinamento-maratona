@@ -25,43 +25,62 @@
                                             Keyboard="Chat"/>
             </Frame>
             <Frame StyleClass="EntryFrame" Grid.Row="4" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                           BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
                     <InputEntry:CustomEntry Placeholder="E-mail" Keyboard="Email" ClearButtonVisibility="WhileEditing"
                                             PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
                                             IsTextPredictionEnabled="True"/>
-            </Frame>
-            <Frame StyleClass="EntryFrame" Grid.Row="5" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
-                    <InputEntry:CustomEntry Placeholder="Usuário"  MaxLength="10" ClearButtonVisibility="WhileEditing"
-                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
-                                            IsTextPredictionEnabled="True" Keyboard="Chat"/>
-            </Frame>
-            <Frame StyleClass="EntryFrame" Grid.Row="6" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-                           BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
-                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
-                
-                    <InputEntry:CustomEntry Placeholder="Senha" IsPassword="True" ClearButtonVisibility="WhileEditing"
-                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"/>
-                
-                    <Label Text="&#xf06e;" Grid.Column="1" FontSize="20" TextColor="White">
+                    <Label Text="&#xf0e0;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String"
-                                        Android="fa-solid-900.ttf" 
+                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" 
                                         iOS="Font Awesome 5 Free"/>
                         </Label.FontFamily>
                     </Label>
                 </Grid>
             </Frame>
-            
+            <Frame StyleClass="EntryFrame" Grid.Row="5" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                           BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
+                    <InputEntry:CustomEntry Placeholder="Usuário"  MaxLength="10" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
+                                            IsTextPredictionEnabled="True" Keyboard="Chat"/>
+                    <Label Text="&#xf007;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
+                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" 
+                                        iOS="Font Awesome 5 Free"/>
+                        </Label.FontFamily>
+                    </Label>
+                </Grid>
+            </Frame>
+            <Frame StyleClass="EntryFrame" Grid.Row="6" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
+                           BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
+                    <InputEntry:CustomEntry Placeholder="Senha" IsPassword="True" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"/>
+                    <Label Text="&#xf06e;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
+                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" 
+                                        iOS="Font Awesome 5 Free"/>
+                        </Label.FontFamily>
+                    </Label>
+                </Grid>
+            </Frame>
             <Frame StyleClass="EntryFrame" Grid.Row="7" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
                    BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
                 <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
                     <InputEntry:CustomEntry Placeholder="Confirmar Senha" IsPassword="True" ClearButtonVisibility="WhileEditing"
                                             PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"/>
-                    <Label Text="&#xf070;" Grid.Column="1" FontSize="20" TextColor="White">
+                    <Label Text="&#xf070;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="Center">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String"
-                                        Android="fa-solid-900.ttf" 
+                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" 
                                         iOS="Font Awesome 5 Free"/>
                         </Label.FontFamily>
                     </Label>
@@ -80,16 +99,27 @@
                                             IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" Keyboard="Chat"/>
             </Frame>
             <Frame StyleClass="EntryFrame" Grid.Row="10" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                           BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
                     <InputEntry:CustomEntry Placeholder="Telefone" Keyboard="Telephone" ClearButtonVisibility="WhileEditing"
                                             PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next">
                         <InputEntry:CustomEntry.Behaviors>
                             <InputEntry:MaskedBehavior Mask="(XXX) XXXX-XXXX" />
                         </InputEntry:CustomEntry.Behaviors>
                     </InputEntry:CustomEntry>
+                    <Label Text="&#xf879;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
+                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                                        iOS="Font Awesome 5 Free Solid"/>
+                        </Label.FontFamily>
+                    </Label>
+                </Grid>
             </Frame>
             <Frame StyleClass="EntryFrame" Grid.Row="11" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-                       BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                           BorderColor="White" Padding="5, 0" CornerRadius="15" HeightRequest="45">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
                     <InputEntry:CustomEntry Placeholder="Celular" Keyboard="Telephone" ClearButtonVisibility="WhileEditing"
                                             PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go"
                                             Completed="CustomEntry_Completed">
@@ -97,6 +127,15 @@
                             <InputEntry:MaskedBehavior Mask="(XXX) XXXXX-XXXX" />
                         </InputEntry:CustomEntry.Behaviors>
                     </InputEntry:CustomEntry>
+                    <Label Text="&#xf3cd;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
+                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                                        iOS="Font Awesome 5 Free Solid"/>
+                        </Label.FontFamily>
+                    </Label>
+                </Grid>
             </Frame>
             <Button Text="Cadastrar" Grid.Row="12" BackgroundColor="Green" Margin="15, 0, 15, 15"
                         FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>

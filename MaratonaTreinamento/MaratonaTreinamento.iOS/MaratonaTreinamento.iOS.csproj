@@ -150,6 +150,8 @@
     <InterfaceDefinition Include="Resources\SplashScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\fa-solid-900.ttf" />
+    <BundleResource Include="Resources\Font Awesome 5 Brands-Regular-400.otf" />
+    <BundleResource Include="Resources\Font Awesome 5 Free-Regular-400.otf" />
+    <BundleResource Include="Resources\Font Awesome 5 Free-Solid-900.otf" />
   </ItemGroup>
 </Project>

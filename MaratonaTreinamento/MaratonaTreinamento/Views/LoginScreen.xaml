@@ -17,12 +17,23 @@
                 <Frame StyleClass="EntryFrame" Grid.Row="1" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
                        BorderColor="White" Padding="5, 0" CornerRadius="15">
                     <InputEntry:CustomEntry Placeholder="Digite seu login" Grid.Row="1" HorizontalOptions="FillAndExpand"
-                           PlaceholderColor="White" FontSize="32" TextColor="White"/>
+                                            ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="White" FontSize="32" TextColor="White"/>
                 </Frame>
                 <Frame StyleClass="EntryFrame" Grid.Row="2" Margin="15, 0, 15, 15" BackgroundColor="Transparent"
-                       BorderColor="White" Padding="5, 0" CornerRadius="15">
-                    <InputEntry:CustomEntry Placeholder="Digite sua senha" IsPassword="True" Grid.Row="1" HorizontalOptions="FillAndExpand"
-                           PlaceholderColor="White" FontSize="32" TextColor="White"/>
+                           BorderColor="White" Padding="5, 0" CornerRadius="15">
+                    <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
+                        <InputEntry:CustomEntry Placeholder="Digite sua senha" IsPassword="True" ClearButtonVisibility="WhileEditing"
+                                                PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next" FontSize="32"/>
+                        <Label Text="&#xf06e;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                               VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String"
+                                            Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" 
+                                            iOS="Font Awesome 5 Free"/>
+                            </Label.FontFamily>
+                        </Label>
+                    </Grid>
                 </Frame>
                 <Button Text="Logar" Grid.Row="3" BackgroundColor="Green" Margin="15, 0, 15, 15"
                         FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
