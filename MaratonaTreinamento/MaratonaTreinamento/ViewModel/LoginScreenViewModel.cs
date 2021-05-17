@@ -26,7 +26,7 @@ namespace MaratonaTreinamento.ViewModel
         #endregion
 
 
-        #region -> Comand's <-
+        #region -> Command's <-
         public Command GoToRegistrScreen => _goToRegistrScreen ?? (_goToRegistrScreen = new Command(async () => CallRegisterScreen()));
         #endregion
 
