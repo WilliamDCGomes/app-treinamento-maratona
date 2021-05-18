@@ -8,6 +8,7 @@ namespace MaratonaTreinamento.Views
     public partial class RegisterScreen : ContentPage
     {
         private RegisterScreenViewModel _registerScreenViewModel;
+        private int _saveCursorPhone = 0;
         public RegisterScreen()
         {
             InitializeComponent();
@@ -22,12 +23,12 @@ namespace MaratonaTreinamento.Views
 
         void PhoneChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-            _registerScreenViewModel.MaskToPhone(EntryPhone.CursorPosition);
+            _registerScreenViewModel.MaskToPhone();
         }
 
         void CellPhoneChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-            _registerScreenViewModel.MaskToCellPhone(EntryCellPhone.CursorPosition);
+            _registerScreenViewModel.MaskToCellPhone();
         }
     }
 }

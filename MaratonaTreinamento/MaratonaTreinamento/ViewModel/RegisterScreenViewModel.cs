@@ -10,8 +10,8 @@ namespace MaratonaTreinamento.ViewModel
         //private Command _goToRegistrScreen;
         private string _phone;
         private string _cellPhone;
-        private int _cursorPhone;
-        private int _cursorCellPhone;
+        //private int _cursorPhone;
+        //private int _cursorCellPhone;
         #endregion
 
 
@@ -20,8 +20,6 @@ namespace MaratonaTreinamento.ViewModel
         {
             _phone = "";
             _cellPhone = "";
-            _cursorPhone = 0;
-            _cursorCellPhone = 0;
     }
         #endregion
 
@@ -29,8 +27,8 @@ namespace MaratonaTreinamento.ViewModel
         #region -> Encapsulamentos <-
         public string Phone { get { return _phone; } set { _phone = value; OnPropertyChanged("Phone"); } }
         public string CellPhone { get { return _cellPhone; } set { _cellPhone = value; OnPropertyChanged("CellPhone"); } }
-        public int CursorPhone { get { return _cursorPhone; } set { _cursorPhone = value; OnPropertyChanged("CursorPhone"); } }
-        public int CursorCellPhone { get { return _cursorCellPhone; } set { _cursorCellPhone = value; OnPropertyChanged("CursorCellPhone"); } }
+        //public int CursorPhone { get { return _cursorPhone; } set { _cursorPhone = value; OnPropertyChanged("CursorPhone"); } }
+        //public int CursorCellPhone { get { return _cursorCellPhone; } set { _cursorCellPhone = value; OnPropertyChanged("CursorCellPhone"); } }
         #endregion
 
 
@@ -40,13 +38,13 @@ namespace MaratonaTreinamento.ViewModel
 
 
         #region -> Metodos <-
-        public void MaskToPhone(int cursorPhone)
+        public void MaskToPhone()
         {
             _phone = MaskedFormatting.MaskToPhone(_phone);
             OnPropertyChanged("Phone");
         }
 
-        public void MaskToCellPhone(int cursorCellPhone)
+        public void MaskToCellPhone()
         {
             _cellPhone = MaskedFormatting.MaskToCellPhone(_cellPhone);
             OnPropertyChanged("CellPhone");
