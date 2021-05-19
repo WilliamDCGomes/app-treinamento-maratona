@@ -1,22 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
+<Shell
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Exercícios"
+    xmlns:local="clr-namespace:MaratonaTreinamento.Views"
+    NavigationPage.HasNavigationBar="False"
     x:Class="MaratonaTreinamento.Views.MainMenu">
-    <ListView Margin="10"
-              ItemsSource="{Binding }" 
-              IsGroupingEnabled="false" 
-              ItemSelected="ListaNome_ItemSelected"
-              CachingStrategy="RecycleElementAndDataTemplate">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Grid RowSpacing="0" HeightRequest="113" Opacity="{Binding OpacidadeCategoria}">
-
-                    </Grid>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-</ContentPage>
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#0051C1">
+            <Label Text="Teste" TextColor="White"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Menu" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Exercícios" Icon="appleLogo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ExerciseList}"/>
+        <ShellContent Title="Exercícios" Icon="appleLogo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:VisualizeExercise}"/>
+    </FlyoutItem>
+</Shell>

@@ -8,6 +8,7 @@ namespace MaratonaTreinamento.ViewModel
     {
         #region -> Propriedades <-
         private Command _goToRegistrScreen;
+        private Command _goToMainMenu;
 
         private INavigation _navigation;
         #endregion
@@ -27,7 +28,8 @@ namespace MaratonaTreinamento.ViewModel
 
 
         #region -> Command's <-
-        public Command GoToRegistrScreen => _goToRegistrScreen ?? (_goToRegistrScreen = new Command(async () => CallRegisterScreen()));
+        public Command GoToRegistrScreen => _goToRegistrScreen ?? (_goToRegistrScreen = new Command(() => CallRegisterScreen()));
+        public Command GoToMainMenu => _goToMainMenu ?? (_goToMainMenu = new Command(() => CallMainMenu()));
         #endregion
 
 
@@ -35,6 +37,10 @@ namespace MaratonaTreinamento.ViewModel
         private void CallRegisterScreen()
         {
             _navigation.PushAsync(new RegisterScreen());
+        }
+        private void CallMainMenu()
+        {
+            App.Current.MainPage = new NavigationPage(new MainMenu());
         }
         #endregion
 

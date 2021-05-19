@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace MaratonaTreinamento.Views
 {
-    public partial class MainMenu : Shell
+    public partial class VisualizeExercise : ContentPage
     {
-        public MainMenu()
+        public VisualizeExercise()
         {
             InitializeComponent();
         }

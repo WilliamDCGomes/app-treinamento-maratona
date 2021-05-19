@@ -36,7 +36,8 @@
                     </Grid>
                 </Frame>
                 <Button Text="Logar" Grid.Row="3" BackgroundColor="Green" Margin="15, 0, 15, 15"
-                        FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"/>
+                        FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"
+                        Command="{Binding GoToMainMenu}"/>
                 <Button Text="Cadastrar" Grid.Row="4" BackgroundColor="Blue" Margin="15, 0, 15, 5"
                         FontSize="24" TextColor="White" FontAttributes="Bold" CornerRadius="15"
                         Command="{Binding GoToRegistrScreen}"/>
