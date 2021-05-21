@@ -3,15 +3,23 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MaratonaTreinamento.Views"
-    Title="Menu"
+    NavigationPage.HasNavigationBar="False"
     x:Class="MaratonaTreinamento.Views.MainMenu">
     <Shell.FlyoutHeader>
-        <Grid BackgroundColor="#0051C1">
+        <Grid BackgroundColor="#0051C1" Margin="0, 0, 0, 20">
             <Label Text="Teste" TextColor="White"/>
         </Grid>
     </Shell.FlyoutHeader>
     <FlyoutItem Title="Menu" FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="False">
-        <ShellContent Title="Exercícios" Icon="appleLogo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ExerciseList}"/>
+        <ShellContent Icon="appleLogo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ExerciseList}">
+            <Label Text="&#xf0e0;" TextColor="Red">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String"
+                                Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" 
+                                iOS="Font Awesome 5 Free"/>
+                </Label.FontFamily>
+            </Label>
+        </ShellContent>
         <ShellContent Title="Exercícios" Icon="appleLogo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:VisualizeExercise}"/>
     </FlyoutItem>
 </Shell>

@@ -8,7 +8,7 @@ namespace MaratonaTreinamento.Views
     public partial class RegisterScreen : ContentPage
     {
         private RegisterScreenViewModel _registerScreenViewModel;
-        private int _saveCursorPhone = 0;
+
         public RegisterScreen()
         {
             InitializeComponent();

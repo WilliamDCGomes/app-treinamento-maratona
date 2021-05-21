@@ -10,8 +10,6 @@ namespace MaratonaTreinamento.ViewModel
         //private Command _goToRegistrScreen;
         private string _phone;
         private string _cellPhone;
-        //private int _cursorPhone;
-        //private int _cursorCellPhone;
         #endregion
 
 
@@ -20,15 +18,13 @@ namespace MaratonaTreinamento.ViewModel
         {
             _phone = "";
             _cellPhone = "";
-    }
+        }
         #endregion
 
 
         #region -> Encapsulamentos <-
         public string Phone { get { return _phone; } set { _phone = value; OnPropertyChanged("Phone"); } }
         public string CellPhone { get { return _cellPhone; } set { _cellPhone = value; OnPropertyChanged("CellPhone"); } }
-        //public int CursorPhone { get { return _cursorPhone; } set { _cursorPhone = value; OnPropertyChanged("CursorPhone"); } }
-        //public int CursorCellPhone { get { return _cursorCellPhone; } set { _cursorCellPhone = value; OnPropertyChanged("CursorCellPhone"); } }
         #endregion
 
 

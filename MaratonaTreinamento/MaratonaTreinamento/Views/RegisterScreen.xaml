@@ -103,7 +103,7 @@
                 <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
                     <InputEntry:CustomEntry Text="{Binding Phone}" Placeholder="Telefone" Keyboard="Telephone" ClearButtonVisibility="WhileEditing"
                                             x:Name="EntryPhone" PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Next"
-                                            TextChanged="PhoneChanged" CursorPosition="{Binding CursorPhone}">
+                                            TextChanged="PhoneChanged">
                         
                     </InputEntry:CustomEntry>
                     <Label Text="&#xf879;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
@@ -121,7 +121,7 @@
                 <Grid Margin="0" Padding="0" ColumnDefinitions="*, auto">
                     <InputEntry:CustomEntry Text="{Binding CellPhone}" Placeholder="Celular" Keyboard="Telephone" ClearButtonVisibility="WhileEditing"
                                             PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go" TextChanged="CellPhoneChanged"
-                                            x:Name="EntryCellPhone" Completed="CustomEntry_Completed" CursorPosition="{Binding CursorCellPhone}">
+                                            x:Name="EntryCellPhone" Completed="CustomEntry_Completed">
                         
                     </InputEntry:CustomEntry>
                     <Label Text="&#xf3cd;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
