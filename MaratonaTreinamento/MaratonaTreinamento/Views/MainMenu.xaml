@@ -1,29 +1,55 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
+<MasterDetailPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MaratonaTreinamento.Views"
     xmlns:pages="clr-namespace:MaratonaTreinamento;assembly=MaratonaTreinamento"
+    x:Class="MaratonaTreinamento.Views.MainMenu"
+    BackgroundColor="#0D1117"
     NavigationPage.HasNavigationBar="False"
-    x:Class="MaratonaTreinamento.Views.MainMenu">
-    <Shell.FlyoutHeader>
-        <Grid BackgroundColor="#0051C1" Margin="0, 20, 0, 20" HeightRequest="200">
-            <Label Text="Teste" TextColor="White"/>
-        </Grid>
-    </Shell.FlyoutHeader>
-    <FlyoutItem Title="Menu" Icon="appleLogo.png" >
-        <ShellContent ContentTemplate="{DataTemplate local:ExerciseList}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Menu" Icon="appleLogo.png" >
-        <ShellContent ContentTemplate="{DataTemplate local:ExerciseList}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Menu" Icon="appleLogo.png" >
-        <ShellContent ContentTemplate="{DataTemplate local:ExerciseList}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Menu" Icon="appleLogo.png" >
-        <ShellContent ContentTemplate="{DataTemplate local:ExerciseList}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Menu" Icon="appleLogo.png" >
-        <ShellContent ContentTemplate="{DataTemplate local:ExerciseList}"/>
-    </FlyoutItem>
-</Shell>
+    >
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <Grid RowDefinitions="auto, *" BackgroundColor="#0D1117">
+                <Grid HeightRequest="200" BackgroundColor="Blue" >
+                    <Grid.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0, 25, 0, 0" />
+                            <On Platform="Android" Value="0" />
+                        </OnPlatform>
+                    </Grid.Margin>
+                    <Label Text="Teste" TextColor="Black" />
+                </Grid>
+                <ListView Grid.Row="1" x:Name="navigationDrawerList" RowHeight="60"
+                          BackgroundColor="#0D1117" SeparatorVisibility="None" Margin="0"
+                          ItemSelected="MenuItemSelected" ItemsSource="{Binding ListMainMenu}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid BackgroundColor="#0D1117" ColumnDefinitions="Auto, Auto"
+                                      Margin="15, 0, 0, 0">
+                                    <Label Text="{Binding Icon}" Grid.Column="0" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                                           VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Center">
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String"
+                                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                                                        iOS="Font Awesome 5 Free Solid"/>
+                                        </Label.FontFamily>
+                                    </Label>
+                                    <Label Text="{Binding Title}" Grid.Column="1" TextColor="White" FontSize="20" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

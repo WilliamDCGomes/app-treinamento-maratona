@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using MaratonaTreinamento.Model;
+using MaratonaTreinamento.Views;
+using Xamarin.Forms;
 
 namespace MaratonaTreinamento.ViewModel
 {
@@ -32,7 +34,11 @@ namespace MaratonaTreinamento.ViewModel
         #region -> Metodos <-
         private void LoadListMainMenu()
         {
-            _listMainMenu.Add(new MasterDetailPageList("&#xf5fc;", "Exercícios"));
+            _listMainMenu.Add(new MasterDetailPageList() { Title = "Exercícios", Icon = "\uf5fc", TargetType = typeof(ExerciseList) });
+            _listMainMenu.Add(new MasterDetailPageList() { Title = "Recomendados para você", Icon = "\uf14e", TargetType = typeof(ExerciseList) });
+            _listMainMenu.Add(new MasterDetailPageList() { Title = "Favoritos", Icon = "\uf005", TargetType = typeof(ExerciseList) });
+            _listMainMenu.Add(new MasterDetailPageList() { Title = "Perfíl", Icon = "\uf2bd", TargetType = typeof(ExerciseList) });
+            _listMainMenu.Add(new MasterDetailPageList() { Title = "Sair", Icon = "\uf2f5", TargetType = typeof(ExerciseList) });
         }
         #endregion
 

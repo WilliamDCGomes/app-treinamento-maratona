@@ -7,7 +7,7 @@ using Xamarin.Forms;
 namespace MaratonaTreinamento.Views
 {
     [Obsolete]
-    public partial class MainMenu : Shell
+    public partial class MainMenu : MasterDetailPage
     {
         private MainMenuViewModel _mainMenuViewModel;
         public MainMenu()
@@ -15,11 +15,16 @@ namespace MaratonaTreinamento.Views
             InitializeComponent();
             _mainMenuViewModel = new MainMenuViewModel();
             BindingContext = _mainMenuViewModel;
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ExerciseList)));
         }
 
-        void itemFromMenuselected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void MenuItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            
+            var item = (MasterDetailPageList)e.SelectedItem;
+            (sender as ListView).SelectedItem = null;
+            Type page = item.TargetType;
+            Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+            IsPresented = false;
         }
     }
 }
