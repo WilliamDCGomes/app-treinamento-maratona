@@ -21,6 +21,8 @@ namespace MaratonaTreinamento.Views
         void MenuItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             var item = (MasterDetailPageList)e.SelectedItem;
+            if (item == null)
+                return;
             (sender as ListView).SelectedItem = null;
             Type page = item.TargetType;
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
