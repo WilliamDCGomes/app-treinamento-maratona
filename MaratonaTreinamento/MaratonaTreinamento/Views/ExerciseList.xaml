@@ -2,8 +2,27 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MaratonaTreinamento.Views.ExerciseList">
-    <ContentPage.Content>
-        <Label Text="Teste 1"/>
-    </ContentPage.Content>
+    xmlns:InputEntry="clr-namespace:MaratonaTreinamento.FormattingClass"
+    x:Class="MaratonaTreinamento.Views.ExerciseList"
+    BackgroundColor="#0D1117">
+    <Grid RowDefinitions="Auto, *">
+        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, *">
+            <Frame StyleClass="EntryFrame" Margin="10" BackgroundColor="Transparent"
+                   Grid.ColumnSpan="2" BorderColor="White" Padding="5, 0" CornerRadius="15"
+                   HorizontalOptions="CenterAndExpand">
+                <Grid Margin="0" Padding="0" ColumnDefinitions="auto, auto" BackgroundColor="#0D1117">
+                    <InputEntry:CustomEntry Placeholder="Pesquisar Exercício" ClearButtonVisibility="WhileEditing"
+                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go" FontSize="20"/>
+                    <Label Text="&#xf3eb;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                         <Label.FontFamily>
+                             <OnPlatform x:TypeArguments="x:String"
+                                         Android="Font Awesome 5 Brands-Regular-400.otf#Font Awesome 5 Free Brands Regular" 
+                                         iOS="Font Awesome 5 Brands Regular"/>
+                         </Label.FontFamily>
+                    </Label>
+                </Grid>
+            </Frame>
+        </Grid>
+    </Grid>
 </ContentPage>
