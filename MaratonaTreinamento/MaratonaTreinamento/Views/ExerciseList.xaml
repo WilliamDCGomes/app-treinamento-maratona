@@ -2,27 +2,69 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:InputEntry="clr-namespace:MaratonaTreinamento.FormattingClass"
+    xmlns:CustomInput="clr-namespace:MaratonaTreinamento.FormattingClass"
     x:Class="MaratonaTreinamento.Views.ExerciseList"
     BackgroundColor="#0D1117">
     <Grid RowDefinitions="Auto, *">
-        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, *">
-            <Frame StyleClass="EntryFrame" Margin="10" BackgroundColor="Transparent"
-                   Grid.ColumnSpan="2" BorderColor="White" Padding="5, 0" CornerRadius="15"
-                   HorizontalOptions="CenterAndExpand">
-                <Grid Margin="0" Padding="0" ColumnDefinitions="auto, auto" BackgroundColor="#0D1117">
-                    <InputEntry:CustomEntry Placeholder="Pesquisar Exercício" ClearButtonVisibility="WhileEditing"
+        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto, *">
+            <Frame StyleClass="EntryFrame" Margin="15, 10, 15, 5" BackgroundColor="Transparent"
+                   Grid.ColumnSpan="3" BorderColor="White" Padding="5" CornerRadius="15"
+                   HorizontalOptions="FillAndExpand">
+                <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, *" BackgroundColor="#0D1117">
+                    <CustomInput:CustomEntry x:Name="InputExerciseName" Placeholder="Pesquisar Exercício" ClearButtonVisibility="WhileEditing"
                                             PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go" FontSize="20"/>
-                    <Label Text="&#xf3eb;" Grid.Column="1" FontSize="20" TextColor="White" Margin="0, 0, 10, 0"
-                           VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-                         <Label.FontFamily>
+                    <Label Text="&#xf3eb;" Grid.Column="1" FontSize="24" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                        <Label.FontFamily>
                              <OnPlatform x:TypeArguments="x:String"
                                          Android="Font Awesome 5 Brands-Regular-400.otf#Font Awesome 5 Free Brands Regular" 
                                          iOS="Font Awesome 5 Brands Regular"/>
-                         </Label.FontFamily>
+                        </Label.FontFamily>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="FocusEntryExercise" />
+                        </Label.GestureRecognizers>
                     </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FocusEntryExercise" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+            <Frame StyleClass="EntryFrame" BackgroundColor="Transparent"
+                   Grid.Column="1" Grid.Row="1" BorderColor="White" Padding="0, 5" Margin="0"
+                   CornerRadius="15" HorizontalOptions="CenterAndExpand" HeightRequest="40">
+                <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, auto" BackgroundColor="#0D1117">
+                    <CustomInput:CustomPicker x:Name="InputPickerDifficulty" Grid.Column="0" FontSize="15" Title="Nível de Dificuldade"
+                                          TextColor="White" TitleColor="White" ItemsSource="{Binding DifficultyLevel}"
+                                          SelectedIndexChanged="ItemSelected" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="&#xf0d7;" Grid.Column="1" FontSize="25" TextColor="White" Margin="0, 0, 10, 0"
+                           VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                        <Label.FontFamily>
+                             <OnPlatform x:TypeArguments="x:String"
+                                         Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                                         iOS="Font Awesome 5 Free Solid"/>
+                        </Label.FontFamily>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GetFocusToPicker" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GetFocusToPicker" />
+                    </Grid.GestureRecognizers>
                 </Grid>
             </Frame>
         </Grid>
+        <ListView Grid.Row="1" x:Name="navigationDrawerList" RowHeight="60"
+                  BackgroundColor="#0D1117" SeparatorVisibility="None" Margin="0, 10, 0, 0"
+                  ItemSelected="ExerciseSelected" ItemsSource="{Binding ExerciseList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="0" HasShadow="False">
+
+                        </Frame>
+                   </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </ContentPage>
