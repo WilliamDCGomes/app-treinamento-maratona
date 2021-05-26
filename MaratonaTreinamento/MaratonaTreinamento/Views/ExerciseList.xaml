@@ -60,7 +60,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <Frame Padding="0" HasShadow="False">
-
+                            <Grid RowDefinitions="Auto, Auto">
+                                <Label Text="{Binding Title}" TextColor="White" FontSize="26"/>
+                                
+                            </Grid>
                         </Frame>
                    </ViewCell>
                 </DataTemplate>
