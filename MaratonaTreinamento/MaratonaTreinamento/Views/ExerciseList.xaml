@@ -59,9 +59,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Padding="0" HasShadow="False">
+                        <Frame Padding="5" HasShadow="False" Margin="30, 5" CornerRadius="10">
                             <Grid RowDefinitions="Auto, Auto">
-                                <Label Text="{Binding Title}" TextColor="White" FontSize="26"/>
+                                <Label Text="{Binding Title}" TextColor="Black" FontSize="26"/>
                                 
                             </Grid>
                         </Frame>
