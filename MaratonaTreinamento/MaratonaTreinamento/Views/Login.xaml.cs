@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
@@ -78,14 +80,20 @@ namespace MaratonaTreinamento.Views
             await frameApple.FadeTo(1, 100, Easing.BounceOut);
         }
 
-        void EnterLogin(System.Object sender, System.EventArgs e)
+        async void EnterLogin(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new LoginScreen());
+            UserDialogs.Instance.ShowLoading("");
+            await Task.Delay(100);
+            await Navigation.PushAsync(new LoginScreen());
+            UserDialogs.Instance.HideLoading();
         }
 
-        void NewUser(System.Object sender, System.EventArgs e)
+        async void NewUser(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new RegisterScreen());
+            UserDialogs.Instance.ShowLoading("");
+            await Task.Delay(100);
+            await Navigation.PushAsync(new RegisterScreen());
+            UserDialogs.Instance.HideLoading();
         }
     }
 }

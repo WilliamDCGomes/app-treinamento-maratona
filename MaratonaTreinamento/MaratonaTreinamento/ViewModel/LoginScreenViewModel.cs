@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MaratonaTreinamento.Views;
 using Xamarin.Forms;
 
@@ -34,13 +36,21 @@ namespace MaratonaTreinamento.ViewModel
 
 
         #region -> Metodos <-
-        private void CallRegisterScreen()
+        private async void CallRegisterScreen()
         {
-            _navigation.PushAsync(new RegisterScreen());
+            UserDialogs.Instance.ShowLoading("");
+            await Task.Delay(100);
+            await _navigation.PushAsync(new RegisterScreen());
+            UserDialogs.Instance.HideLoading();
         }
-        private void CallMainMenu()
+
+        [Obsolete]
+        private async void CallMainMenu()
         {
+            UserDialogs.Instance.ShowLoading("");
+            await Task.Delay(100);
             App.Current.MainPage = new NavigationPage(new MainMenu());
+            UserDialogs.Instance.HideLoading();
         }
         #endregion
 

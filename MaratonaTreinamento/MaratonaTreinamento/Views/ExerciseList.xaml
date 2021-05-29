@@ -70,11 +70,11 @@
                                 <BoxView BackgroundColor="{Binding GetColor}" Opacity="0.35" />
                             </Grid>
                         </Frame>
-                        <Grid Padding="10" Margin="0">
+                        <Grid Padding="10, 10, 10, 5" Margin="0">
                             <Grid RowDefinitions="Auto, Auto, *, Auto" ColumnDefinitions="Auto, *" Margin="10">
-                                <Label Grid.ColumnSpan="2" Text="{Binding Title}" TextColor="White" FontSize="26"/>
+                                <Label Grid.ColumnSpan="2" Text="{Binding Title}" TextColor="White" FontSize="26" LineBreakMode="TailTruncation"/>
                                 <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Id}" TextColor="White" FontSize="22"/>
-                                <Label Grid.Row="3" Text="{Binding AuthorsComment}" TextColor="White" FontSize="18"
+                                <Label Grid.Row="3" Text="{Binding AuthorsComment}" TextColor="White" FontSize="18" LineBreakMode="TailTruncation"
                                        VerticalOptions="EndAndExpand"/>
                                 <Label Grid.Row="3" Grid.Column="1" TextColor="White" FontSize="16"
                                        HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MaratonaTreinamento.Model;
 using MaratonaTreinamento.ViewModel;
 using Xamarin.Forms;
@@ -18,11 +20,12 @@ namespace MaratonaTreinamento.Views
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ExerciseList)));
         }
 
-        void MenuItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        async void MenuItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             var item = (MasterDetailPageList)e.SelectedItem;
             if (item == null)
                 return;
+            UserDialogs.Instance.ShowLoading("");
             (sender as ListView).SelectedItem = null;
             Type page = item.TargetType;
             if (item.Title.Equals("Exercícios"))
@@ -31,8 +34,18 @@ namespace MaratonaTreinamento.Views
                 App.ListType = 1;
             else if (item.Title.Equals("Favoritos"))
                 App.ListType = 2;
+            else if (item.Title.Equals("Sair"))
+            {
+                if (await Application.Current.MainPage.DisplayAlert("Atenção!", "Deseja realmente sair?", "Sim", "Não"))
+                {
+                    Application.Current.MainPage = new NavigationPage(new Login());
+                }
+                UserDialogs.Instance.HideLoading();
+                return;
+            }
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;
+            UserDialogs.Instance.HideLoading();
         }
     }
 }

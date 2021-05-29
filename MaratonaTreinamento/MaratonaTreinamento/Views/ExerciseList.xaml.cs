@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MaratonaTreinamento.Model;
 using MaratonaTreinamento.ViewModel;
 using Xamarin.Forms;
@@ -56,17 +58,24 @@ namespace MaratonaTreinamento.Views
             InputPickerDifficulty.Focus();
         }
 
-        void ExerciseSelected(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        async void ExerciseSelected(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
+            UserDialogs.Instance.ShowLoading("");
+            await Task.Delay(100);
             var item = (Exercise)CollectionList.SelectedItem;
             if (item == null)
                 return;
             (sender as CollectionView).SelectedItem = null;
-            Navigation.PushAsync(new VisualizeExercise(item));
+            await Navigation.PushAsync(new VisualizeExercise(item));
+            UserDialogs.Instance.HideLoading();
         }
 
-        void ItemSelected(System.Object sender, System.EventArgs e)
+        async void ItemSelected(System.Object sender, System.EventArgs e)
         {
+            UserDialogs.Instance.ShowLoading("");
+            await Task.Delay(100);
+
+            UserDialogs.Instance.HideLoading();
         }
         #endregion
     }
