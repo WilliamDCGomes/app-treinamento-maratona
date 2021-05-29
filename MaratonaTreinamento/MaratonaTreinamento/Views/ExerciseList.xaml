@@ -53,19 +53,18 @@
                 </Grid>
             </Frame>
         </Grid>
-        <ListView Grid.Row="1" Grid.Column="1" x:Name="navigationDrawerList" BackgroundColor="#0D1117" SeparatorVisibility="None"
-                  Margin="0, 10, 0, 0" ItemSelected="ExerciseSelected" ItemsSource="{Binding ExerciseList}"
-                  RowHeight="200">
-            <ListView.WidthRequest>
-                <OnIdiom x:TypeArguments="x:Double" Phone="400" Tablet="450"/>
-            </ListView.WidthRequest>
-            <ListView.ItemTemplate>
+        <CollectionView x:Name="CollectionList" Grid.Row="1" Grid.Column="1" BackgroundColor="#0D1117"
+                  Margin="0, 10, 0, 0" SelectionMode="Single" SelectionChanged="ExerciseSelected" ItemsSource="{Binding ExerciseList}"
+                  EmptyView="Não há exercícios disponíveis" ItemSizingStrategy="MeasureAllItems">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
                         <Frame Padding="0" HasShadow="False" Margin="30, 15, 30, 15" CornerRadius="10" BorderColor="Transparent"
-                               BackgroundColor="Transparent">
-                            <Grid Padding="0" Margin="0">
-                                <Image Source="{Binding GetImagebackground}" Aspect="AspectFill"/>
+                               BackgroundColor="Transparent" HeightRequest="200">
+                            <Frame.WidthRequest>
+                                <OnIdiom x:TypeArguments="x:Double" Phone="350" Tablet="300"/>
+                            </Frame.WidthRequest>
+                            <Grid Padding="0" Margin="0" >
+                                <Image Source="{Binding GetImagebackground}" Aspect="AspectFill" HeightRequest="200"/>
                                 <BoxView BackgroundColor="{Binding GetColor}" Opacity="0.35"/>
                                 <Grid RowDefinitions="Auto, Auto, *, Auto" ColumnDefinitions="Auto, *" Margin="10">
                                     <Label Grid.ColumnSpan="2" Text="{Binding Title}" TextColor="White" FontSize="26"/>
@@ -84,9 +83,8 @@
                                 </Grid>
                             </Grid>
                         </Frame>
-                   </ViewCell>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>

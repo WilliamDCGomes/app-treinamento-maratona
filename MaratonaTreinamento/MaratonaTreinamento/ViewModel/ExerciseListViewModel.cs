@@ -89,6 +89,96 @@ namespace MaratonaTreinamento.ViewModel
                 AuthorsComment = "Thomas Richard",
                 SiteOrigem = "www.urionlinejudge.com.br"
             });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 5,
+                Title = "Programação de Viagem",
+                DifficultyLevel = 4,
+                NecessaryKnowledge = "Grafos;Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "William Douglas",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 6,
+                Title = "Desenhando Labirintos",
+                DifficultyLevel = 5,
+                NecessaryKnowledge = "C#;Ruby;Programação Orientada a Objetos;Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Heleno Maurino",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 7,
+                Title = "Percurso em Árvore por Nível",
+                DifficultyLevel = 2,
+                NecessaryKnowledge = "Html;CSS;Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Bárbara Ribeiro",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 8,
+                Title = "Aproveite a Oferta",
+                DifficultyLevel = 3,
+                NecessaryKnowledge = "C++;Java;Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Carol Molina",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 9,
+                Title = "Diamantes e Areia",
+                DifficultyLevel = 1,
+                NecessaryKnowledge = "Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Thomas Richard",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 10,
+                Title = "Desenhando Labirintos",
+                DifficultyLevel = 5,
+                NecessaryKnowledge = "C#;Ruby;Programação Orientada a Objetos;Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Heleno Maurino",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 11,
+                Title = "Percurso em Árvore por Nível",
+                DifficultyLevel = 2,
+                NecessaryKnowledge = "Html;CSS;Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Bárbara Ribeiro",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 12,
+                Title = "Aproveite a Oferta",
+                DifficultyLevel = 3,
+                NecessaryKnowledge = "C++;Java;Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Carol Molina",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
+            _exerciseList.Add(new Exercise()
+            {
+                Id = 13,
+                Title = "Diamantes e Areia",
+                DifficultyLevel = 1,
+                NecessaryKnowledge = "Lógica de Programação;Programação Dinâmica",
+                Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
+                AuthorsComment = "Thomas Richard",
+                SiteOrigem = "www.urionlinejudge.com.br"
+            });
         }
         #endregion
 

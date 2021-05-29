@@ -14,6 +14,27 @@ namespace MaratonaTreinamento.Views
             InitializeComponent();
             _exerciseListViewMode = new ExerciseListViewModel();
             BindingContext = _exerciseListViewMode;
+            LoadCollectionList();
+        }
+
+        void LoadCollectionList()
+        {
+            if(Device.Idiom == TargetIdiom.Tablet)
+            {
+                CollectionList.ItemsLayout = new GridItemsLayout(2, ItemsLayoutOrientation.Vertical)
+                {
+                    VerticalItemSpacing = 20,
+                    HorizontalItemSpacing = 30
+                };
+            }
+            else if (Device.Idiom == TargetIdiom.Phone)
+            {
+                CollectionList.ItemsLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
+                {
+                    VerticalItemSpacing = 20,
+                    HorizontalItemSpacing = 30
+                };
+            }
         }
 
         void ItemSelected(System.Object sender, System.EventArgs e)
