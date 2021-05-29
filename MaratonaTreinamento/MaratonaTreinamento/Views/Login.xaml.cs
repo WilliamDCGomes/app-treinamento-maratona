@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MaratonaTreinamento.Views
 {
@@ -10,6 +12,7 @@ namespace MaratonaTreinamento.Views
         public Login()
         {
             InitializeComponent();
+            On<iOS>().SetUseSafeArea(true);
             buttonsAnimation();
         }
 

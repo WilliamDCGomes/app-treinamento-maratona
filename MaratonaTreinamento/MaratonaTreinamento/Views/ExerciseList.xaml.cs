@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using MaratonaTreinamento.Model;
 using MaratonaTreinamento.ViewModel;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MaratonaTreinamento.Views
 {
@@ -12,6 +14,7 @@ namespace MaratonaTreinamento.Views
         public ExerciseList()
         {
             InitializeComponent();
+            On<iOS>().SetUseSafeArea(true);
             _exerciseListViewMode = new ExerciseListViewModel();
             BindingContext = _exerciseListViewMode;
             LoadCollectionList();
@@ -57,7 +60,7 @@ namespace MaratonaTreinamento.Views
             var item = (Exercise)e.SelectedItem;
             if (item == null)
                 return;
-            (sender as ListView).SelectedItem = null;
+            (sender as CollectionView).SelectedItem = null;
             Navigation.PushAsync(new VisualizeExercise(item));
         }
     }
