@@ -10,7 +10,11 @@ namespace MaratonaTreinamento.Views
 {
     public partial class ExerciseList : ContentPage
     {
+        #region -> Propriedades <-
         private ExerciseListViewModel _exerciseListViewMode;
+        #endregion
+
+        #region -> Construtor <-
         public ExerciseList()
         {
             InitializeComponent();
@@ -19,7 +23,9 @@ namespace MaratonaTreinamento.Views
             BindingContext = _exerciseListViewMode;
             LoadCollectionList();
         }
+        #endregion
 
+        #region -> Metodos <-
         void LoadCollectionList()
         {
             if(Device.Idiom == TargetIdiom.Tablet)
@@ -40,11 +46,6 @@ namespace MaratonaTreinamento.Views
             }
         }
 
-        void ItemSelected(System.Object sender, System.EventArgs e)
-        {
-
-        }
-
         void FocusEntryExercise(System.Object sender, System.EventArgs e)
         {
             InputExerciseName.Focus();
@@ -55,13 +56,18 @@ namespace MaratonaTreinamento.Views
             InputPickerDifficulty.Focus();
         }
 
-        void ExerciseSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void ExerciseSelected(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
-            var item = (Exercise)e.SelectedItem;
+            var item = (Exercise)CollectionList.SelectedItem;
             if (item == null)
                 return;
             (sender as CollectionView).SelectedItem = null;
             Navigation.PushAsync(new VisualizeExercise(item));
         }
+
+        void ItemSelected(System.Object sender, System.EventArgs e)
+        {
+        }
+        #endregion
     }
 }

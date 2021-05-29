@@ -25,6 +25,12 @@ namespace MaratonaTreinamento.Views
                 return;
             (sender as ListView).SelectedItem = null;
             Type page = item.TargetType;
+            if (item.Title.Equals("Exercícios"))
+                App.ListType = 0;
+            else if (item.Title.Equals("Recomendados para você"))
+                App.ListType = 1;
+            else if (item.Title.Equals("Favoritos"))
+                App.ListType = 2;
             Detail = new NavigationPage((Page)Activator.CreateInstance(page));
             IsPresented = false;
         }

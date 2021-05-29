@@ -42,8 +42,8 @@ namespace MaratonaTreinamento.ViewModel
         private void LoadListMainMenu()
         {
             _listMainMenu.Add(new MasterDetailPageList() { Title = "Exercícios", Icon = "\uf5fc", TargetType = typeof(ExerciseList) });
-            _listMainMenu.Add(new MasterDetailPageList() { Title = "Recomendados para você", Icon = "\uf14e", TargetType = typeof(Login) });
-            _listMainMenu.Add(new MasterDetailPageList() { Title = "Favoritos", Icon = "\uf005", TargetType = typeof(LoginScreen) });
+            _listMainMenu.Add(new MasterDetailPageList() { Title = "Recomendados para você", Icon = "\uf14e", TargetType = typeof(ExerciseList) });
+            _listMainMenu.Add(new MasterDetailPageList() { Title = "Favoritos", Icon = "\uf005", TargetType = typeof(ExerciseList) });
             _listMainMenu.Add(new MasterDetailPageList() { Title = "Perfíl", Icon = "\uf2bd", TargetType = typeof(RegisterScreen) });
             _listMainMenu.Add(new MasterDetailPageList() { Title = "Sair", Icon = "\uf2f5", TargetType = typeof(VisualizeExercise) });
 

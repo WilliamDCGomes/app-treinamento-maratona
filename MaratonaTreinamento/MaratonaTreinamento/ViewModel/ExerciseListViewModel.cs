@@ -9,6 +9,7 @@ namespace MaratonaTreinamento.ViewModel
         #region -> Propriedades <-
         private List<string> _difficultyLevel;
         private List<Exercise> _exerciseList;
+        private string _titlePage;
         #endregion
 
 
@@ -25,6 +26,7 @@ namespace MaratonaTreinamento.ViewModel
         #region -> Encapsulamentos <-
         public List<string> DifficultyLevel { get { return _difficultyLevel; } set { _difficultyLevel = value; OnPropertyChanged("DifficultyLevel"); } }
         public List<Exercise> ExerciseList { get { return _exerciseList; } set { _exerciseList = value; OnPropertyChanged("ExerciseList"); } }
+        public string TitlePage { get { return _titlePage; } set { _titlePage = value; OnPropertyChanged("TitlePage"); } }
         #endregion
 
 
@@ -34,12 +36,25 @@ namespace MaratonaTreinamento.ViewModel
 
 
         #region -> Metodos <-
-        private void loadData()
+        public void loadData()
         {
             _difficultyLevel.Add("Fácil");
             _difficultyLevel.Add("Médio");
             _difficultyLevel.Add("Difícil");
             _difficultyLevel.Add("Todos");
+
+            switch (App.ListType)
+            {
+                case 0:
+                    _titlePage = "Exercícios";
+                    break;
+                case 1:
+                    _titlePage = "Exercícios Recomendados";
+                    break;
+                case 2:
+                    _titlePage = "Exercícios Favoritos";
+                    break;
+            }
 
             _exerciseList.Add(new Exercise() {
                 Id = 0,
