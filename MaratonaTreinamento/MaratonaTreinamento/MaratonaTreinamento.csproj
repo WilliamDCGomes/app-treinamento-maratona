@@ -21,6 +21,7 @@
     <Folder Include="ViewModel\" />
     <Folder Include="FormattingClass\" />
     <Folder Include="Services\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\fa-solid-900.ttf" />

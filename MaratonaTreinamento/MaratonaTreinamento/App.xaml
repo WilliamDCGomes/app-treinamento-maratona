@@ -19,5 +19,10 @@
             <Setter Property="TextColor" Value="White" />
             <Setter Property="FontSize" Value="15" />
         </Style>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
+            <On Platform="iOS" Value="FontAwesome5Free-Solid" />
+            <On Platform="Android" Value="Fonts/FontAwesome5Solid.otf#Regular" />
+            <On Platform="UWP" Value="/Assets/FontAwesome5Solid.otf#Font Awesome 5 Free" />
+        </OnPlatform>
     </Application.Resources>
 </Application>

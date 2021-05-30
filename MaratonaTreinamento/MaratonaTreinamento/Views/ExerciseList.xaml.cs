@@ -61,7 +61,6 @@ namespace MaratonaTreinamento.Views
         async void ExerciseSelected(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
             UserDialogs.Instance.ShowLoading("");
-            await Task.Delay(100);
             var item = (Exercise)CollectionList.SelectedItem;
             if (item == null)
                 return;
@@ -70,10 +69,9 @@ namespace MaratonaTreinamento.Views
             UserDialogs.Instance.HideLoading();
         }
 
-        async void ItemSelected(System.Object sender, System.EventArgs e)
+        void ItemSelected(System.Object sender, System.EventArgs e)
         {
             UserDialogs.Instance.ShowLoading("");
-            await Task.Delay(100);
 
             UserDialogs.Instance.HideLoading();
         }

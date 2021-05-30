@@ -2,8 +2,13 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MaratonaTreinamento.Views.VisualizeExercise">
-    <ContentPage.Content>
-        <Label Text="Teste 2" />
-    </ContentPage.Content>
+    x:Class="MaratonaTreinamento.Views.VisualizeExercise"
+    Title="{Binding Exercise.Title}"
+    BackgroundColor="#0D1117">
+    <ScrollView Margin="0" Padding="0">
+        <Grid RowDefinitions="200, *">
+            <Image Source="{Binding Exercise.GetImagebackground}" Aspect="AspectFill"/> 
+            <BoxView BackgroundColor="{Binding Exercise.GetColor}" Opacity="0.35" />
+        </Grid>
+    </ScrollView>
 </ContentPage>
