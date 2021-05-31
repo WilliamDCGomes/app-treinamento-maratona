@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MaratonaTreinamento.Model;
+using Xamarin.Forms;
 
 namespace MaratonaTreinamento.ViewModel
 {
@@ -31,7 +33,7 @@ namespace MaratonaTreinamento.ViewModel
 
 
         #region -> Command's <-
-
+        
         #endregion
 
 
@@ -56,13 +58,16 @@ namespace MaratonaTreinamento.ViewModel
                     break;
             }
 
-            _exerciseList.Add(new Exercise() {
+            _exerciseList.Add(new Exercise()
+            {
                 Id = 0,
                 Title = "Programação de Viagem",
-                DifficultyLevel = 4, NecessaryKnowledge = "Grafos;Lógica de Programação;Programação Dinâmica",
+                DifficultyLevel = 4,
+                NecessaryKnowledge = "Grafos;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "William Douglas",
-                SiteOrigem = "www.urionlinejudge.com.br"
+                SiteOrigem = "www.urionlinejudge.com.br",
+                IsFavorited = true
             });
             _exerciseList.Add(new Exercise()
             {
@@ -92,7 +97,8 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "C++;Java;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "Carol Molina",
-                SiteOrigem = "www.urionlinejudge.com.br"
+                SiteOrigem = "www.urionlinejudge.com.br",
+                IsFavorited = true
             });
             _exerciseList.Add(new Exercise()
             {
@@ -112,7 +118,8 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "Grafos;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "William Douglas",
-                SiteOrigem = "www.urionlinejudge.com.br"
+                SiteOrigem = "www.urionlinejudge.com.br",
+                IsFavorited = true
             });
             _exerciseList.Add(new Exercise()
             {
@@ -172,7 +179,8 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "Html;CSS;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "Bárbara Ribeiro",
-                SiteOrigem = "www.urionlinejudge.com.br"
+                SiteOrigem = "www.urionlinejudge.com.br",
+                IsFavorited = true
             });
             _exerciseList.Add(new Exercise()
             {
@@ -182,7 +190,8 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "C++;Java;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "Carol Molina",
-                SiteOrigem = "www.urionlinejudge.com.br"
+                SiteOrigem = "www.urionlinejudge.com.br",
+                IsFavorited = true
             });
             _exerciseList.Add(new Exercise()
             {
@@ -194,6 +203,11 @@ namespace MaratonaTreinamento.ViewModel
                 AuthorsComment = "Thomas Richard",
                 SiteOrigem = "www.urionlinejudge.com.br"
             });
+        }
+
+        public void MakeFavoriteExercise(Exercise exercise)
+        {
+            ExerciseList.FirstOrDefault(el => el.Id == exercise.Id).IsFavorited = !ExerciseList.FirstOrDefault(el => el.Id == exercise.Id).IsFavorited;
         }
         #endregion
 

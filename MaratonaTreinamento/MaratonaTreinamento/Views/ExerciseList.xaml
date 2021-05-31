@@ -10,95 +10,118 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Command="{Binding ExportDocumentCommand}">
             <ToolbarItem.IconImageSource>
-                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Size="Subtitle" 
-                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.FileExport}" />
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Size="Large" 
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.PlusCircle}"/>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, Auto, *">
-        <Grid Grid.ColumnSpan="3" RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto, *">
-            <Frame StyleClass="EntryFrame" Margin="15, 10, 15, 5" BackgroundColor="Transparent"
-                   Grid.ColumnSpan="3" BorderColor="White" Padding="5" CornerRadius="15"
-                   HorizontalOptions="FillAndExpand">
-                <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, *" BackgroundColor="#0D1117">
-                    <CustomInput:CustomEntry x:Name="InputExerciseName" Placeholder="Pesquisar Exercício" ClearButtonVisibility="WhileEditing"
-                                            PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go" FontSize="20"/>
-                    <Label Text="&#xf3eb;" Grid.Column="1" FontSize="24" TextColor="White" Margin="0, 0, 10, 0"
-                           VerticalOptions="Center" HorizontalOptions="EndAndExpand">
-                        <Label.FontFamily>
-                             <OnPlatform x:TypeArguments="x:String"
-                                         Android="Font Awesome 5 Brands-Regular-400.otf#Font Awesome 5 Free Brands Regular" 
-                                         iOS="Font Awesome 5 Brands Regular"/>
-                        </Label.FontFamily>
-                        <Label.GestureRecognizers>
+    <RefreshView x:Name="RefreshList" IsVisible="True" Refreshing="Refresh">
+        <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, Auto, *">
+            <Grid Grid.ColumnSpan="3" RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto, *">
+                <Frame StyleClass="EntryFrame" Margin="15, 10, 15, 5" BackgroundColor="Transparent"
+                       Grid.ColumnSpan="3" BorderColor="White" Padding="5" CornerRadius="15"
+                       HorizontalOptions="FillAndExpand">
+                    <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, *" BackgroundColor="#0D1117">
+                        <CustomInput:CustomEntry x:Name="InputExerciseName" Placeholder="Pesquisar Exercício" ClearButtonVisibility="WhileEditing"
+                                                PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go" FontSize="20"/>
+                        <Label Text="&#xf3eb;" Grid.Column="1" FontSize="24" TextColor="White" Margin="0, 0, 10, 0"
+                               VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                            <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String"
+                                             Android="Font Awesome 5 Brands-Regular-400.otf#Font Awesome 5 Free Brands Regular" 
+                                             iOS="Font Awesome 5 Brands Regular"/>
+                            </Label.FontFamily>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="FocusEntryExercise" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="FocusEntryExercise" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="FocusEntryExercise" />
-                    </Grid.GestureRecognizers>
-                </Grid>
-            </Frame>
-            <Frame StyleClass="EntryFrame" BackgroundColor="Transparent"
-                   Grid.Column="1" Grid.Row="1" BorderColor="White" Padding="0, 5" Margin="0"
-                   CornerRadius="15" HorizontalOptions="CenterAndExpand" HeightRequest="40">
-                <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, auto" BackgroundColor="#0D1117">
-                    <CustomInput:CustomPicker x:Name="InputPickerDifficulty" Grid.Column="0" FontSize="15" Title="Nível de Dificuldade"
-                                          TextColor="White" TitleColor="White" ItemsSource="{Binding DifficultyLevel}"
-                                          SelectedIndexChanged="ItemSelected" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="&#xf0d7;" Grid.Column="1" FontSize="25" TextColor="White" Margin="0, 0, 10, 0"
-                           VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-                        <Label.FontFamily>
-                             <OnPlatform x:TypeArguments="x:String"
-                                         Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
-                                         iOS="Font Awesome 5 Free Solid"/>
-                        </Label.FontFamily>
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="GetFocusToPicker" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GetFocusToPicker" />
-                    </Grid.GestureRecognizers>
-                </Grid>
-            </Frame>
-        </Grid>
-        <CollectionView x:Name="CollectionList" Grid.Row="1" Grid.Column="1" BackgroundColor="#0D1117"
-                  Margin="0, 10, 0, 0" SelectionMode="Single" SelectionChanged="ExerciseSelected" ItemsSource="{Binding ExerciseList}"
-                  EmptyView="Não há exercícios disponíveis" ItemSizingStrategy="MeasureAllItems">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="30, 15, 30, 15" Padding="0" HeightRequest="150">
-                        <Grid.WidthRequest>
-                            <OnIdiom x:TypeArguments="x:Double" Phone="350" Tablet="300"/>
-                        </Grid.WidthRequest>
-                        <Frame BackgroundColor="{Binding GetColor}" BorderColor="Transparent" Opacity="0.35" CornerRadius="20"
-                               Padding="0" Margin="0">
-                            <Grid Padding="0" Margin="0">
-                                <Image Source="{Binding GetImagebackground}" Aspect="AspectFill" />
-                                <BoxView BackgroundColor="{Binding GetColor}" Opacity="0.35" />
-                            </Grid>
-                        </Frame>
-                        <Grid Padding="10, 10, 10, 5" Margin="0">
-                            <Grid RowDefinitions="Auto, Auto, *, Auto" ColumnDefinitions="Auto, *" Margin="10">
-                                <Label Grid.ColumnSpan="2" Text="{Binding Title}" TextColor="White" FontSize="26" LineBreakMode="TailTruncation"/>
-                                <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Id}" TextColor="White" FontSize="22"/>
-                                <Label Grid.Row="3" Text="{Binding AuthorsComment}" TextColor="White" FontSize="18" LineBreakMode="TailTruncation"
-                                       VerticalOptions="EndAndExpand"/>
-                                <Label Grid.Row="3" Grid.Column="1" TextColor="White" FontSize="16"
-                                       HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="Dificuldade: "/>
-                                            <Span Text="{Binding DifficultyLevel}"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            </Grid>
-                        </Grid>
+                        </Grid.GestureRecognizers>
                     </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </Grid>
+                </Frame>
+                <Frame StyleClass="EntryFrame" BackgroundColor="Transparent"
+                       Grid.Column="1" Grid.Row="1" BorderColor="White" Padding="0, 5" Margin="0"
+                       CornerRadius="15" HorizontalOptions="CenterAndExpand" HeightRequest="40">
+                    <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, auto" BackgroundColor="#0D1117">
+                        <CustomInput:CustomPicker x:Name="InputPickerDifficulty" Grid.Column="0" FontSize="15" Title="Nível de Dificuldade"
+                                              TextColor="White" TitleColor="White" ItemsSource="{Binding DifficultyLevel}"
+                                              SelectedIndexChanged="ItemSelected" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="&#xf0d7;" Grid.Column="1" FontSize="25" TextColor="White" Margin="0, 0, 10, 0"
+                               VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                            <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String"
+                                             Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                                             iOS="Font Awesome 5 Free Solid"/>
+                            </Label.FontFamily>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="GetFocusToPicker" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GetFocusToPicker" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </Frame>
+            </Grid>
+            <CollectionView x:Name="CollectionList" Grid.Row="1" Grid.Column="1" BackgroundColor="#0D1117" ItemsUpdatingScrollMode="KeepItemsInView"
+                            Margin="0, 10, 0, 0" SelectionMode="Single" SelectionChanged="ExerciseSelected" ItemsSource="{Binding ExerciseList}"
+                            EmptyView="Não há exercícios disponíveis" ItemSizingStrategy="MeasureAllItems" RemainingItemsThreshold="10"
+                            Scrolled="ListScrolled">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView Margin="0" Padding="0">
+                            <SwipeView.LeftItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Invoked="MakeFavorite" CommandParameter="{Binding}">
+                                        <SwipeItem.IconImageSource >
+                                            <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Size="Large" 
+                                                             Glyph="{x:Static fontawesome:FontAwesomeIcons.Star}"/>
+                                        </SwipeItem.IconImageSource>
+                                    </SwipeItem>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <Grid Margin="30, 15, 30, 15" Padding="0" HeightRequest="150">
+                                <Grid.WidthRequest>
+                                    <OnIdiom x:TypeArguments="x:Double" Phone="350" Tablet="300"/>
+                                </Grid.WidthRequest>
+                                <Frame BackgroundColor="{Binding GetColor}" BorderColor="Transparent" Opacity="0.35" CornerRadius="20"
+                                       Padding="0" Margin="0">
+                                    <Grid Padding="0" Margin="0">
+                                        <Image Source="{Binding GetImagebackground}" Aspect="AspectFill" />
+                                        <BoxView BackgroundColor="{Binding GetColor}" Opacity="0.35" />
+                                    </Grid>
+                                </Frame>
+                                <Grid Padding="5" Margin="0">
+                                    <Grid RowDefinitions="Auto, Auto, *, Auto" ColumnDefinitions="*, Auto" Margin="10">
+                                        <Label Text="{Binding Title}" TextColor="White" FontSize="26" LineBreakMode="TailTruncation"/>
+                                        <Label Text="&#xf005;" Grid.Column="1" FontSize="20" TextColor="{Binding GetStarColor}" Margin="0"
+                                               VerticalOptions="Center" HorizontalOptions="End" HorizontalTextAlignment="End">
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String"
+                                                            Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" 
+                                                            iOS="Font Awesome 5 Free"/>
+                                            </Label.FontFamily>
+                                        </Label>
+                                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Id}" TextColor="White" FontSize="22"/>
+                                        <Label Grid.Row="3" Text="{Binding AuthorsComment}" TextColor="White" FontSize="18" LineBreakMode="TailTruncation"
+                                               VerticalOptions="EndAndExpand"/>
+                                        <Label Grid.Row="3" Grid.Column="1" TextColor="White" FontSize="16"
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Dificuldade: "/>
+                                                    <Span Text="{Binding DifficultyLevel}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </RefreshView>
 </ContentPage>

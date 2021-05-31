@@ -21,8 +21,7 @@
         </Style>
         <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
             <On Platform="iOS" Value="FontAwesome5Free-Solid" />
-            <On Platform="Android" Value="Fonts/FontAwesome5Solid.otf#Regular" />
-            <On Platform="UWP" Value="/Assets/FontAwesome5Solid.otf#Font Awesome 5 Free" />
+            <On Platform="Android" Value="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Regular" />
         </OnPlatform>
     </Application.Resources>
 </Application>

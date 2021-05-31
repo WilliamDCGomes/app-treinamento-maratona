@@ -14,6 +14,7 @@ namespace MaratonaTreinamento.Views
     {
         #region -> Propriedades <-
         private ExerciseListViewModel _exerciseListViewMode;
+        private int _lastItemVisible;
         #endregion
 
         #region -> Construtor <-
@@ -21,6 +22,7 @@ namespace MaratonaTreinamento.Views
         {
             InitializeComponent();
             On<iOS>().SetUseSafeArea(true);
+            _lastItemVisible = 0;
             _exerciseListViewMode = new ExerciseListViewModel();
             BindingContext = _exerciseListViewMode;
             LoadCollectionList();
@@ -30,12 +32,14 @@ namespace MaratonaTreinamento.Views
         #region -> Metodos <-
         void LoadCollectionList()
         {
-            if(Device.Idiom == TargetIdiom.Tablet)
+            if (Device.Idiom == TargetIdiom.Tablet)
             {
                 CollectionList.ItemsLayout = new GridItemsLayout(2, ItemsLayoutOrientation.Vertical)
                 {
                     VerticalItemSpacing = 20,
-                    HorizontalItemSpacing = 30
+                    HorizontalItemSpacing = 30,
+                    SnapPointsType = SnapPointsType.Mandatory,
+                    SnapPointsAlignment = SnapPointsAlignment.End
                 };
             }
             else if (Device.Idiom == TargetIdiom.Phone)
@@ -43,7 +47,9 @@ namespace MaratonaTreinamento.Views
                 CollectionList.ItemsLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
                 {
                     VerticalItemSpacing = 20,
-                    HorizontalItemSpacing = 30
+                    HorizontalItemSpacing = 30,
+                    SnapPointsType = SnapPointsType.Mandatory,
+                    SnapPointsAlignment = SnapPointsAlignment.End
                 };
             }
         }
@@ -74,6 +80,31 @@ namespace MaratonaTreinamento.Views
             UserDialogs.Instance.ShowLoading("");
 
             UserDialogs.Instance.HideLoading();
+        }
+
+        void Refresh(System.Object sender, System.EventArgs e)
+        {
+            _exerciseListViewMode.loadData();
+            CollectionList.ItemsSource = null;
+            CollectionList.ItemsSource = _exerciseListViewMode.ExerciseList;
+            RefreshList.IsRefreshing = false;
+        }
+
+        async void MakeFavorite(System.Object sender, System.EventArgs e)
+        {
+            UserDialogs.Instance.ShowLoading("");
+            await Task.Delay(100);
+            var exerciseSelected = (sender as Xamarin.Forms.SwipeItem).CommandParameter as Exercise;
+            _exerciseListViewMode.MakeFavoriteExercise(exerciseSelected);
+            CollectionList.ItemsSource = null;
+            CollectionList.ItemsSource = _exerciseListViewMode.ExerciseList;
+            CollectionList.ScrollTo(_lastItemVisible, animate: false, position: ScrollToPosition.End);
+            UserDialogs.Instance.HideLoading();
+        }
+
+        void ListScrolled(System.Object sender, Xamarin.Forms.ItemsViewScrolledEventArgs e)
+        {
+            _lastItemVisible = e.LastVisibleItemIndex;
         }
         #endregion
     }

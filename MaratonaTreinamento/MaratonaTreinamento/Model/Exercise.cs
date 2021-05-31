@@ -12,6 +12,7 @@ namespace MaratonaTreinamento.Model
         public string NecessaryKnowledge { get; set; }
         public string Description { get; set; }
         public string AuthorsComment { get; set; }
+        public bool IsFavorited { get; set; }
 
         public string GetColor
         {
@@ -62,6 +63,20 @@ namespace MaratonaTreinamento.Model
                 }
                 return "";
             }
+        }
+        public string GetStarColor
+        {
+            get
+            {
+                if (IsFavorited)
+                    return "#f7bb00";
+                return "#FFFFFF";
+            }
+        }
+
+        public Exercise()
+        {
+            IsFavorited = false;
         }
     }
 }
