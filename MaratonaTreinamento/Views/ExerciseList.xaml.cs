@@ -78,7 +78,7 @@ namespace MaratonaTreinamento.Views
         void ItemSelected(System.Object sender, System.EventArgs e)
         {
             UserDialogs.Instance.ShowLoading("");
-
+            _exerciseListViewMode.listFilter();
             UserDialogs.Instance.HideLoading();
         }
 
@@ -96,8 +96,6 @@ namespace MaratonaTreinamento.Views
             await Task.Delay(100);
             var exerciseSelected = (sender as Xamarin.Forms.SwipeItem).CommandParameter as Exercise;
             _exerciseListViewMode.MakeFavoriteExercise(exerciseSelected);
-            CollectionList.ItemsSource = null;
-            CollectionList.ItemsSource = _exerciseListViewMode.ExerciseList;
             CollectionList.ScrollTo(_lastItemVisible, animate: false, position: ScrollToPosition.End);
             UserDialogs.Instance.HideLoading();
         }

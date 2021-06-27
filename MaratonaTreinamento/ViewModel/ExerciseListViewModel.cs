@@ -11,7 +11,9 @@ namespace MaratonaTreinamento.ViewModel
         #region -> Propriedades <-
         private List<string> _difficultyLevel;
         private List<Exercise> _exerciseList;
+        private List<Exercise> _allExercises;
         private string _titlePage;
+        int _selectedIndex;
         #endregion
 
 
@@ -29,21 +31,52 @@ namespace MaratonaTreinamento.ViewModel
         public List<string> DifficultyLevel { get { return _difficultyLevel; } set { _difficultyLevel = value; OnPropertyChanged("DifficultyLevel"); } }
         public List<Exercise> ExerciseList { get { return _exerciseList; } set { _exerciseList = value; OnPropertyChanged("ExerciseList"); } }
         public string TitlePage { get { return _titlePage; } set { _titlePage = value; OnPropertyChanged("TitlePage"); } }
+        public int SelectedIndex { get { return _selectedIndex; } set { _selectedIndex = value; OnPropertyChanged("SelectedIndex"); } }
         #endregion
 
 
         #region -> Command's <-
-        
+
         #endregion
 
 
         #region -> Metodos <-
+        public void listFilter()
+        {
+            switch (SelectedIndex)
+            {
+                case 0:
+                    ExerciseList = _allExercises.Where(ex => ex.DifficultyLevel == 1).ToList();
+                    break;
+                case 1:
+                    ExerciseList = _allExercises.Where(ex => ex.DifficultyLevel == 2).ToList();
+                    break;
+                case 2:
+                    ExerciseList = _allExercises.Where(ex => ex.DifficultyLevel == 3).ToList();
+                    break;
+                case 3:
+                    ExerciseList = _allExercises.Where(ex => ex.DifficultyLevel == 4).ToList();
+                    break;
+                case 4:
+                    ExerciseList = _allExercises.Where(ex => ex.DifficultyLevel == 5).ToList();
+                    break;
+                case 5:
+                    ExerciseList = _allExercises;
+                    break;
+            }
+            OnPropertyChanged("ExerciseList");
+        }
+
         public void loadData()
         {
-            _difficultyLevel.Add("Fácil");
-            _difficultyLevel.Add("Médio");
+            _difficultyLevel.Add("Iniciante");
+            _difficultyLevel.Add("Pós Iniciante");
+            _difficultyLevel.Add("Intermediário");
+            _difficultyLevel.Add("Pós Intermediário");
             _difficultyLevel.Add("Difícil");
             _difficultyLevel.Add("Todos");
+
+            _selectedIndex = -1;
 
             switch (App.ListType)
             {
@@ -203,6 +236,7 @@ namespace MaratonaTreinamento.ViewModel
                 AuthorsComment = "Thomas Richard",
                 SiteOrigem = "www.urionlinejudge.com.br"
             });
+            _allExercises = _exerciseList;
         }
 
         public void MakeFavoriteExercise(Exercise exercise)
