@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MaratonaTreinamento.Model;
 using Xamarin.Forms;
 
@@ -12,14 +14,19 @@ namespace MaratonaTreinamento.ViewModel
         private List<string> _difficultyLevel;
         private List<Exercise> _exerciseList;
         private List<Exercise> _allExercises;
+        private Exercise _selectedExercise;
+        private Command _refreshList;
+        private CollectionView _collectionView;
         private string _titlePage;
+        private bool _isBusy;
         int _selectedIndex;
         #endregion
 
 
         #region -> Construtor <-
-        public ExerciseListViewModel()
+        public ExerciseListViewModel(CollectionView collectionView)
         {
+            _collectionView = collectionView;
             _difficultyLevel = new List<string>();
             _exerciseList = new List<Exercise>();
             loadData();
@@ -30,13 +37,15 @@ namespace MaratonaTreinamento.ViewModel
         #region -> Encapsulamentos <-
         public List<string> DifficultyLevel { get { return _difficultyLevel; } set { _difficultyLevel = value; OnPropertyChanged("DifficultyLevel"); } }
         public List<Exercise> ExerciseList { get { return _exerciseList; } set { _exerciseList = value; OnPropertyChanged("ExerciseList"); } }
+        public Exercise SelectedExercise { get { return _selectedExercise; } set { _selectedExercise = value; OnPropertyChanged("SelectedExercise"); } }
         public string TitlePage { get { return _titlePage; } set { _titlePage = value; OnPropertyChanged("TitlePage"); } }
         public int SelectedIndex { get { return _selectedIndex; } set { _selectedIndex = value; OnPropertyChanged("SelectedIndex"); } }
+        public bool IsBusy { get { return _isBusy; } set { _isBusy = value; OnPropertyChanged("IsBusy"); } }
         #endregion
 
 
         #region -> Command's <-
-
+        public Command RefreshList => _refreshList ?? (_refreshList = new Command(async () => Refresh()));
         #endregion
 
 
@@ -67,6 +76,26 @@ namespace MaratonaTreinamento.ViewModel
             OnPropertyChanged("ExerciseList");
         }
 
+
+        public List<Exercise> MakeFavoriteExercise()
+        {
+            UserDialogs.Instance.ShowLoading("");
+            Task.Delay(100);
+            ExerciseList.FirstOrDefault(el => el.Id == SelectedExercise.Id).IsFavorited = !ExerciseList.FirstOrDefault(el => el.Id == SelectedExercise.Id).IsFavorited;
+            OnPropertyChanged("ExerciseList");
+            UserDialogs.Instance.HideLoading();
+            return _exerciseList;
+        }
+
+        public void Refresh()
+        {
+            IsBusy = true;
+            loadData();
+            _collectionView.ItemsSource = null;
+            _collectionView.ItemsSource = _exerciseList;
+            IsBusy = false;
+        }
+
         public void loadData()
         {
             _difficultyLevel.Add("Iniciante");
@@ -90,7 +119,6 @@ namespace MaratonaTreinamento.ViewModel
                     _titlePage = "Exercícios Favoritos";
                     break;
             }
-
             _exerciseList.Add(new Exercise()
             {
                 Id = 0,
@@ -99,8 +127,7 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "Grafos;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "William Douglas",
-                SiteOrigem = "www.urionlinejudge.com.br",
-                IsFavorited = true
+                SiteOrigem = "www.urionlinejudge.com.br"
             });
             _exerciseList.Add(new Exercise()
             {
@@ -130,8 +157,7 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "C++;Java;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "Carol Molina",
-                SiteOrigem = "www.urionlinejudge.com.br",
-                IsFavorited = true
+                SiteOrigem = "www.urionlinejudge.com.br"
             });
             _exerciseList.Add(new Exercise()
             {
@@ -151,8 +177,7 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "Grafos;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "William Douglas",
-                SiteOrigem = "www.urionlinejudge.com.br",
-                IsFavorited = true
+                SiteOrigem = "www.urionlinejudge.com.br"
             });
             _exerciseList.Add(new Exercise()
             {
@@ -212,8 +237,7 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "Html;CSS;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "Bárbara Ribeiro",
-                SiteOrigem = "www.urionlinejudge.com.br",
-                IsFavorited = true
+                SiteOrigem = "www.urionlinejudge.com.br"
             });
             _exerciseList.Add(new Exercise()
             {
@@ -223,8 +247,7 @@ namespace MaratonaTreinamento.ViewModel
                 NecessaryKnowledge = "C++;Java;Lógica de Programação;Programação Dinâmica",
                 Description = "A entrada consiste em diversas casos de teste. A primeira linha de cada caso contém dois inteiros C (1 ≤ C ≤ 15) e E (1 ≤ E ≤ 225), que indicam a quantidade de cidades e estradas. As E linhas seguintes contém três inteiros C1, C2 e T, que identificam o tempo médio T de deslocamento entre as cidades C1, C2. Por fim, um inteiro D identifica a cidade em que Valentina se encontra no momento. Uma linha com 0 0 finaliza a entrada.",
                 AuthorsComment = "Carol Molina",
-                SiteOrigem = "www.urionlinejudge.com.br",
-                IsFavorited = true
+                SiteOrigem = "www.urionlinejudge.com.br"
             });
             _exerciseList.Add(new Exercise()
             {
@@ -237,11 +260,6 @@ namespace MaratonaTreinamento.ViewModel
                 SiteOrigem = "www.urionlinejudge.com.br"
             });
             _allExercises = _exerciseList;
-        }
-
-        public void MakeFavoriteExercise(Exercise exercise)
-        {
-            ExerciseList.FirstOrDefault(el => el.Id == exercise.Id).IsFavorited = !ExerciseList.FirstOrDefault(el => el.Id == exercise.Id).IsFavorited;
         }
         #endregion
 

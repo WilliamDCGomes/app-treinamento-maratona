@@ -15,56 +15,58 @@
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <RefreshView x:Name="RefreshList" IsVisible="True" Refreshing="Refresh">
-        <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, Auto, *">
-            <Grid Grid.ColumnSpan="3" RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto, *">
-                <Frame StyleClass="EntryFrame" Margin="15, 10, 15, 5" BackgroundColor="Transparent"
+
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, Auto, *">
+        <Grid Grid.ColumnSpan="3" RowDefinitions="Auto, Auto" ColumnDefinitions="*, Auto, *">
+            <Frame StyleClass="EntryFrame" Margin="15, 10, 15, 5" BackgroundColor="Transparent"
                        Grid.ColumnSpan="3" BorderColor="White" Padding="5" CornerRadius="15"
                        HorizontalOptions="FillAndExpand">
-                    <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, *" BackgroundColor="#0D1117">
-                        <CustomInput:CustomEntry x:Name="InputExerciseName" Placeholder="Pesquisar Exercício" ClearButtonVisibility="WhileEditing"
+                <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, *" BackgroundColor="#0D1117">
+                    <CustomInput:CustomEntry x:Name="InputExerciseName" Placeholder="Pesquisar Exercício" ClearButtonVisibility="WhileEditing"
                                                 PlaceholderColor="#f0f0f0" TextColor="White" ReturnType="Go" FontSize="20"/>
-                        <Label Text="&#xf3eb;" Grid.Column="1" FontSize="24" TextColor="White" Margin="0, 0, 10, 0"
+                    <Label Text="&#xf3eb;" Grid.Column="1" FontSize="24" TextColor="White" Margin="0, 0, 10, 0"
                                VerticalOptions="Center" HorizontalOptions="EndAndExpand">
-                            <Label.FontFamily>
-                                 <OnPlatform x:TypeArguments="x:String"
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
                                              Android="Font Awesome 5 Brands-Regular-400.otf#Font Awesome 5 Free Brands Regular" 
                                              iOS="Font Awesome 5 Brands Regular"/>
-                            </Label.FontFamily>
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="FocusEntryExercise" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Grid.GestureRecognizers>
+                        </Label.FontFamily>
+                        <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="FocusEntryExercise" />
-                        </Grid.GestureRecognizers>
-                    </Grid>
-                </Frame>
-                <Frame StyleClass="EntryFrame" BackgroundColor="Transparent"
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FocusEntryExercise" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+            <Frame StyleClass="EntryFrame" BackgroundColor="Transparent"
                        Grid.Column="1" Grid.Row="1" BorderColor="White" Padding="0, 5" Margin="0"
                        CornerRadius="15" HorizontalOptions="CenterAndExpand" HeightRequest="40">
-                    <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, auto" BackgroundColor="#0D1117">
-                        <CustomInput:CustomPicker x:Name="InputPickerDifficulty" Grid.Column="0" FontSize="15" Title="Nível de Dificuldade"
+                <Grid Margin="10, 0" Padding="0" ColumnDefinitions="auto, auto" BackgroundColor="#0D1117">
+                    <CustomInput:CustomPicker x:Name="InputPickerDifficulty" Grid.Column="0" FontSize="15" Title="Nível de Dificuldade"
                                               TextColor="White" TitleColor="White" ItemsSource="{Binding DifficultyLevel}"
                                               SelectedIndexChanged="ItemSelected" SelectedIndex="{Binding SelectedIndex}" VerticalOptions="CenterAndExpand"/>
-                        <Label Text="&#xf0d7;" Grid.Column="1" FontSize="25" TextColor="White" Margin="0, 0, 10, 0"
+                    <Label Text="&#xf0d7;" Grid.Column="1" FontSize="25" TextColor="White" Margin="0, 0, 10, 0"
                                VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-                            <Label.FontFamily>
-                                 <OnPlatform x:TypeArguments="x:String"
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String"
                                              Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
                                              iOS="Font Awesome 5 Free Solid"/>
-                            </Label.FontFamily>
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="GetFocusToPicker" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                        <Grid.GestureRecognizers>
+                        </Label.FontFamily>
+                        <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="GetFocusToPicker" />
-                        </Grid.GestureRecognizers>
-                    </Grid>
-                </Frame>
-            </Grid>
-            <CollectionView x:Name="CollectionList" Grid.Row="1" Grid.Column="1" BackgroundColor="#0D1117" ItemsUpdatingScrollMode="KeepItemsInView"
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GetFocusToPicker" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+        </Grid>
+        <RefreshView IsVisible="True" Command="{Binding RefreshList}" IsRefreshing="{Binding IsBusy, Mode=OneWay}" Grid.Row="1" Grid.Column="1"
+                     RefreshColor="#0051C1">
+            <CollectionView x:Name="CollectionList" BackgroundColor="#0D1117" ItemsUpdatingScrollMode="KeepItemsInView"
                             Margin="0, 10, 0, 0" SelectionMode="Single" SelectionChanged="ExerciseSelected" ItemsSource="{Binding ExerciseList}"
                             EmptyView="Não há exercícios disponíveis" ItemSizingStrategy="MeasureAllItems" RemainingItemsThreshold="10"
                             Scrolled="ListScrolled">
@@ -122,6 +124,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </Grid>
-    </RefreshView>
+        </RefreshView>
+    </Grid>
 </ContentPage>
