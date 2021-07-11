@@ -78,7 +78,9 @@ namespace MaratonaTreinamento.Views
         void ItemSelected(System.Object sender, System.EventArgs e)
         {
             UserDialogs.Instance.ShowLoading("");
-            _exerciseListViewMode.listFilter();
+            Task.Delay(100);
+            CollectionList.ItemsSource = null;
+            CollectionList.ItemsSource = _exerciseListViewMode.listFilter();
             UserDialogs.Instance.HideLoading();
         }
 
@@ -95,6 +97,11 @@ namespace MaratonaTreinamento.Views
             CollectionList.ItemsSource = null;
             CollectionList.ItemsSource = _exerciseListViewMode.MakeFavoriteExercise();
             CollectionList.ScrollTo(_lastItemVisible, animate: false, position: ScrollToPosition.End);
+        }
+
+        void SearchExercise(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            _exerciseListViewMode.SearchingExercise();
         }
         #endregion
     }

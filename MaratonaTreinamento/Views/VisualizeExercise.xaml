@@ -3,8 +3,18 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MaratonaTreinamento.Views.VisualizeExercise"
+    xmlns:CustomInput="clr-namespace:MaratonaTreinamento.FormattingClass"
+    xmlns:fontawesome="clr-namespace:FontAwesome"
     Title="{Binding Exercise.Title}"
     BackgroundColor="#0D1117">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Command="{Binding ExportDocumentCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Size="Large" 
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.Star}" Color="{Binding Exercise.GetStarColor}"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ScrollView Margin="0" Padding="0">
         <Grid RowDefinitions="200, *">
             <Image Source="{Binding Exercise.GetImagebackground}" Aspect="AspectFill"/> 

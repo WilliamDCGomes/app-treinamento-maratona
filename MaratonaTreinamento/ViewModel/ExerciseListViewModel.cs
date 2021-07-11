@@ -18,6 +18,7 @@ namespace MaratonaTreinamento.ViewModel
         private Command _refreshList;
         private CollectionView _collectionView;
         private string _titlePage;
+        private string _searchPhrase;
         private bool _isBusy;
         int _selectedIndex;
         #endregion
@@ -39,6 +40,7 @@ namespace MaratonaTreinamento.ViewModel
         public List<Exercise> ExerciseList { get { return _exerciseList; } set { _exerciseList = value; OnPropertyChanged("ExerciseList"); } }
         public Exercise SelectedExercise { get { return _selectedExercise; } set { _selectedExercise = value; OnPropertyChanged("SelectedExercise"); } }
         public string TitlePage { get { return _titlePage; } set { _titlePage = value; OnPropertyChanged("TitlePage"); } }
+        public string SearchPhrase { get { return _searchPhrase; } set { _searchPhrase = value; OnPropertyChanged("SearchPhrase"); } }
         public int SelectedIndex { get { return _selectedIndex; } set { _selectedIndex = value; OnPropertyChanged("SelectedIndex"); } }
         public bool IsBusy { get { return _isBusy; } set { _isBusy = value; OnPropertyChanged("IsBusy"); } }
         #endregion
@@ -50,7 +52,7 @@ namespace MaratonaTreinamento.ViewModel
 
 
         #region -> Metodos <-
-        public void listFilter()
+        public List<Exercise> listFilter()
         {
             switch (SelectedIndex)
             {
@@ -73,16 +75,24 @@ namespace MaratonaTreinamento.ViewModel
                     ExerciseList = _allExercises;
                     break;
             }
-            OnPropertyChanged("ExerciseList");
+            return ExerciseList;
         }
 
+        public void SearchingExercise()
+        {
+            if (string.IsNullOrEmpty(SearchPhrase.Trim()))
+                _exerciseList = _allExercises;
+            else
+                _exerciseList = _allExercises.Where(ex => ex.Title.ToLower().Contains(SearchPhrase.Trim().ToLower())).ToList();
+            _collectionView.ItemsSource = null;
+            _collectionView.ItemsSource = _exerciseList;
+        }
 
         public List<Exercise> MakeFavoriteExercise()
         {
             UserDialogs.Instance.ShowLoading("");
             Task.Delay(100);
             ExerciseList.FirstOrDefault(el => el.Id == SelectedExercise.Id).IsFavorited = !ExerciseList.FirstOrDefault(el => el.Id == SelectedExercise.Id).IsFavorited;
-            OnPropertyChanged("ExerciseList");
             UserDialogs.Instance.HideLoading();
             return _exerciseList;
         }
