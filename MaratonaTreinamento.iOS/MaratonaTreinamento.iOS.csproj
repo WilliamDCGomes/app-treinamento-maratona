@@ -74,68 +74,192 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\googleLogo.png" />
-    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\googleLogo%402x.png" />
-    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\googleLogo%403x.png" />
-    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\appleLogo.png" />
-    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\appleLogo%402x.png" />
-    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\appleLogo%403x.png" />
-    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\faceLogo.png" />
-    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\faceLogo%402x.png" />
-    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\faceLogo%403x.png" />
-    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin.png" />
-    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin%402x.png" />
-    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin%403x.png" />
-    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen.png" />
-    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen%402x.png" />
-    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x-1.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png" />
-    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen.png" />
-    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen%402x.png" />
-    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen%403x.png" />
-    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\beginnerLevel.png" />
-    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\beginnerLevel%402x.png" />
-    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\beginnerLevel%403x.png" />
-    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\hardLevel.png" />
-    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\hardLevel%402x.png" />
-    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\hardLevel%403x.png" />
-    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\intermediateLevel.png" />
-    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\intermediateLevel%402x.png" />
-    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\intermediateLevel%403x.png" />
-    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\postBeginnerLevel.png" />
-    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\postBeginnerLevel%402x.png" />
-    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\postBeginnerLevel%403x.png" />
-    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\postIntermediateLevel.png" />
-    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\postIntermediateLevel%402x.png" />
-    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\postIntermediateLevel%403x.png" />
+    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\googleLogo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\googleLogo%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\googleLogo.imageset\googleLogo%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\appleLogo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\appleLogo%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\appleLogo.imageset\appleLogo%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\faceLogo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\faceLogo%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\faceLogo.imageset\faceLogo%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLogin.imageset\backgroundLogin%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundLaunchScreen.imageset\backgroundLaunchScreen%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logoLoginScreen.imageset\logoLoginScreen%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\beginnerLevel.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\beginnerLevel%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\beginnerLevel.imageset\beginnerLevel%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\hardLevel.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\hardLevel%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hardLevel.imageset\hardLevel%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\intermediateLevel.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\intermediateLevel%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\intermediateLevel.imageset\intermediateLevel%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\postBeginnerLevel.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\postBeginnerLevel%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postBeginnerLevel.imageset\postBeginnerLevel%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\postIntermediateLevel.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\postIntermediateLevel%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\postIntermediateLevel.imageset\postIntermediateLevel%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

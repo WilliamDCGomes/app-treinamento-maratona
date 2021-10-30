@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <color android:color="@color/ic_launcher_background"/>
+  </item>
+  <item android:bottom="50dp">
+    <bitmap
+        android:src="@drawable/backgroundsplashscreen"
+        android:tileMode="disabled"
+        android:gravity="fill"/>
+  </item>
+</layer-list>

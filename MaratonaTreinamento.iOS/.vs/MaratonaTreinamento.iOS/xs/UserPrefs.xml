@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{83A32311-F56B-4146-9EBA-5424E8F28D0F}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MaratonaTreinamento.iOS" expanded="True" selected="True">
+            <Node name="MaratonaTreinamento.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MaratonaTreinamento.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F938F6AB-E8CC-4C88-9D4C-76E28C3C51AE" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
