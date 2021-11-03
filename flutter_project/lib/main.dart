@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import '2-app/views/initialPage.dart';
+import '2-app/views/pages/initialPage.dart';
 
 void main() {
   runApp(const MyApp());
