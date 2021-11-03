@@ -1,8 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/2-app/views/stylePages/appColors.dart';
 
 class TextWidget extends StatelessWidget {
-  final String _texto;
+  final String _text;
   final Color? textColor;
   final TextAlign? textAlign;
   final double? fontSize;
@@ -10,7 +11,7 @@ class TextWidget extends StatelessWidget {
   final TextDecoration? textDecoration;
 
   TextWidget(
-      this._texto,
+      this._text,
       {
         Key? key,
         this.textColor,
@@ -24,9 +25,9 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      _texto,
+      _text,
       style: TextStyle(
-        color: textColor,
+        color: textColor ?? AppColors().whiteColor,
         fontSize: fontSize ?? (Platform.isAndroid ? 20 : 35),
         fontWeight: fontWeight ?? FontWeight.normal,
         decoration: textDecoration,

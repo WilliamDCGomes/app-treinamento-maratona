@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/2-app/views/stylePages/appColors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
 import 'textWidget.dart';
 
 class DropdownButtonWidget extends StatelessWidget {
-  final List<String> itensLista;
-  final String? itemSelecionado;
+  final List<String> listItems;
+  final String? itemSelected;
   final String? hintText;
   final Function(String?)? onChanged;
 
   const DropdownButtonWidget(
       { Key? key,
-        required this.itensLista,
-        this.itemSelecionado,
+        required this.listItems,
+        this.itemSelected,
         this.hintText,
         required this.onChanged,
       }) : super(key: key);
@@ -26,20 +25,20 @@ class DropdownButtonWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: CoresAplicativos().corCinzaBorda,
+          color: AppColors().grayColor,
         ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: DropdownButtonHideUnderline(
           child:DropdownButton(
-            items: itensLista.map((String item) {
+            items: listItems.map((String item) {
               return DropdownMenuItem<String>(
                 child: Text(item),
                 value: item,
               );
             }).toList(),
-            value: itemSelecionado,
+            value: itemSelected,
             onChanged: onChanged,
             hint:TextWidget(
               hintText ?? "",
@@ -47,18 +46,18 @@ class DropdownButtonWidget extends StatelessWidget {
             ),
             elevation: 8,
             style:TextStyle(
-              color:CoresAplicativos().corPreto91,
+              color: AppColors().blackColor91Percent,
               fontSize: 16,
             ),
             icon: RotationTransition(
               turns: AlwaysStoppedAnimation(3 / 4),
               child: Icon(
                 Icons.arrow_back_ios_outlined,
-                color: CoresAplicativos().corPreto91,
+                color: AppColors().blackColor91Percent,
                 size: 2.5.h,
               ),
             ),
-            dropdownColor: CoresAplicativos().corBranca,
+            dropdownColor: AppColors().whiteColor,
           ),
         ),
       ),

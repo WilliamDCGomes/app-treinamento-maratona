@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class InitialPageController extends GetxController {
   InitialPageController();
 
-  carregaTelaInicial(){
+  loadFirstScreen(){
     //Configurar para que possa ir direto a tela de menu iniciar
     Get.to(WelcomePage());
   }

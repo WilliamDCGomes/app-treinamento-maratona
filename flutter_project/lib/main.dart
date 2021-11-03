@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Color(0XFF0A0F37),
+      systemNavigationBarColor:  Color(0XFF0A0F35),
+    ));
 
     return ResponsiveSizer(builder: (context, orientation, screentype) {
       return GetMaterialApp(

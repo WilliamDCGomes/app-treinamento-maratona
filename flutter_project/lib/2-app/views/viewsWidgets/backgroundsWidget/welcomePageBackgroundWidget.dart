@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/2-app/helpers/paths.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class WelcomePageBackgroundWidget extends StatelessWidget {
@@ -9,7 +10,7 @@ class WelcomePageBackgroundWidget extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-          "lib/2-app/assets/images/backgroundWelcomePage.png",
+          "${Paths().imagesPath}backgroundWelcomePage.png",
           fit: BoxFit.fitHeight,
           height: 100.h,
           width: 100.w,
@@ -18,7 +19,7 @@ class WelcomePageBackgroundWidget extends StatelessWidget {
           height: 100.h,
           width: 100.w,
           color: Color.fromRGBO(0, 0, 0, 0.4),
-        )
+        ),
       ],
     );
   }

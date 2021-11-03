@@ -4,7 +4,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 class TextFieldWidget extends StatelessWidget {
   final String? hintText;
   final int? maxLength;
-  final bool? campoHabilitado;
+  final bool? ableField;
   final double? height;
   final double? width;
   final double? fontSize;
@@ -26,7 +26,7 @@ class TextFieldWidget extends StatelessWidget {
       { Key? key,
         this.hintText,
         this.maxLength,
-        this.campoHabilitado,
+        this.ableField,
         this.height,
         this.width,
         this.fontSize,
@@ -52,12 +52,12 @@ class TextFieldWidget extends StatelessWidget {
       width: width ?? 200,
       child: TextField(
         maxLength: maxLength,
-        style: textStyle ?? textStylePadrao(),
+        style: textStyle ?? standardTextStyle(),
         textAlignVertical: textAlignVertical ?? TextAlignVertical.center,
         focusNode: focusNode,
         keyboardType: keyboardType ?? TextInputType.text,
-        decoration: decoration ?? decorationPadrao(),
-        enabled: campoHabilitado ?? true,
+        decoration: decoration ?? standardDecoration(),
+        enabled: ableField ?? true,
         onTap: onTap,
         onEditingComplete: onEditingComplete,
         onChanged: onChanged,
@@ -67,7 +67,7 @@ class TextFieldWidget extends StatelessWidget {
     );
   }
 
-  InputDecoration decorationPadrao(){
+  InputDecoration standardDecoration(){
     double heightInput = 65;
     if(height != null)
       heightInput = height!;
@@ -90,7 +90,7 @@ class TextFieldWidget extends StatelessWidget {
     );
   }
 
-  TextStyle textStylePadrao(){
+  TextStyle standardTextStyle(){
     return TextStyle(
       color: textColor ?? Colors.black,
       fontSize: fontSize ?? 17,

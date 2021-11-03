@@ -13,7 +13,7 @@ class _InitialPageState extends State<InitialPage> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) => InitialPageController().carregaTelaInicial());
+    WidgetsBinding.instance!.addPostFrameCallback((_) => InitialPageController().loadFirstScreen());
   }
 
   @override
