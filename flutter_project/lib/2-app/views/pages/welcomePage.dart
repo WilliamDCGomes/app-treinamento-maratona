@@ -21,6 +21,17 @@ class _WelcomePageState extends State<WelcomePage> {
   late WelcomeController controller;
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance!
+        .addPostFrameCallback((_) {
+      setState(() {
+        controller.startAnimation();
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     controller = Get.put(WelcomeController());
     return SafeArea(
@@ -34,102 +45,139 @@ class _WelcomePageState extends State<WelcomePage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(bottom: 3.5.h),
-                    child: TextWidget(
-                      "Comece a praticar agora!\nFaça o seu Login",
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.sp,
+                    child: Column(
+                      children: [
+                        AnimatedSlide(
+                          offset: controller.offset0,
+                          duration: const Duration(milliseconds: 600),
+                          child: TextWidget(
+                            "Comece a praticar agora!",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.sp,
+                          ),
+                        ),
+                        AnimatedSlide(
+                          offset: controller.offset1,
+                          duration: const Duration(milliseconds: 750),
+                          child: TextWidget(
+                            "Faça o seu Login",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.sp,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(bottom: 3.5.h),
-                    child: Stack(
-                      children: [
-                        ButtonWidget(
-                          hintText: "ENTRAR COM GOOGLE",
-                          fontWeight: FontWeight.bold,
-                          widthButton: 75.w,
-                          backgroundColor: AppColors().googleLogoBackgroundColor,
-                          onPressed: (){
-                            controller.googleButtonPressed();
-                          },
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 3.5.w, top: 1.25.h),
-                          child: Image.asset(
-                            "${Paths().imagesPath}googleLogo.png",
-                            height: 3.5.h,
+                    child: AnimatedSlide(
+                      offset: controller.offset2,
+                      duration: const Duration(milliseconds: 900),
+                      child: Stack(
+                        children: [
+                          ButtonWidget(
+                            hintText: "ENTRAR COM GOOGLE",
+                            fontWeight: FontWeight.bold,
+                            widthButton: 75.w,
+                            backgroundColor: AppColors().googleLogoBackgroundColor,
+                            onPressed: (){
+                              controller.googleButtonPressed();
+                            },
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: EdgeInsets.only(left: 3.5.w, top: 1.25.h),
+                            child: Image.asset(
+                              "${Paths().imagesPath}googleLogo.png",
+                              height: 3.5.h,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 3.5.h),
+                    child: AnimatedSlide(
+                      offset: controller.offset3,
+                      duration: const Duration(milliseconds: 1050),
+                      child: Stack(
+                        children: [
+                          ButtonWidget(
+                            hintText: "ENTRAR COM FACEBOOK",
+                            fontWeight: FontWeight.bold,
+                            widthButton: 75.w,
+                            backgroundColor: AppColors().facebookLogoBackgroundColor,
+                            onPressed: (){
+                              controller.facebookButtonPressed();
+                            },
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 4.6.w, top: 1.25.h),
+                            child: Image.asset(
+                              "${Paths().imagesPath}faceLogo.png",
+                              height: 3.5.h,
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ),
                   Padding(
                     padding: EdgeInsets.only(bottom: 3.5.h),
-                    child: Stack(
-                      children: [
-                        ButtonWidget(
-                          hintText: "ENTRAR COM FACEBOOK",
-                          fontWeight: FontWeight.bold,
-                          widthButton: 75.w,
-                          backgroundColor: AppColors().facebookLogoBackgroundColor,
-                          onPressed: (){
-                            controller.facebookButtonPressed();
-                          },
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 4.3.w, top: 1.25.h),
-                          child: Image.asset(
-                            "${Paths().imagesPath}faceLogo.png",
-                            height: 3.5.h,
+                    child: AnimatedSlide(
+                      offset: controller.offset4,
+                      duration: const Duration(milliseconds: 1200),
+                      child: Stack(
+                        children: [
+                          ButtonWidget(
+                            hintText: "ENTRAR COM APPLE",
+                            fontWeight: FontWeight.bold,
+                            textColor: AppColors().blackColor,
+                            widthButton: 75.w,
+                            backgroundColor: AppColors().grayColor,
+                            onPressed: (){
+                              controller.appleButtonPressed();
+                            },
                           ),
-                        ),
-                      ],
-                    )
+                          Padding(
+                            padding: EdgeInsets.only(left: 3.2.w, top: 1.h),
+                            child: Image.asset(
+                              "${Paths().imagesPath}appleLogo.png",
+                              height: 3.5.h,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(bottom: 3.5.h),
-                    child: Stack(
-                      children: [
-                        ButtonWidget(
-                          hintText: "ENTRAR COM CONTA APPLE",
-                          fontWeight: FontWeight.bold,
-                          textColor: AppColors().blackColor,
-                          widthButton: 75.w,
-                          backgroundColor: AppColors().grayColor,
-                          onPressed: (){
-                            controller.appleButtonPressed();
-                          },
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 3.2.w, top: 1.h),
-                          child: Image.asset(
-                            "${Paths().imagesPath}appleLogo.png",
-                            height: 3.5.h,
-                          ),
-                        ),
-                      ],
-                    )
+                    child: AnimatedSlide(
+                      offset: controller.offset5,
+                      duration: const Duration(milliseconds: 1350),
+                      child: ButtonWidget(
+                        hintText: "ACESSAR",
+                        fontWeight: FontWeight.bold,
+                        widthButton: 75.w,
+                        backgroundColor: AppColors().brightBlueColor,
+                        onPressed: (){
+                          controller.accessButtonPressed();
+                        },
+                      ),
+                    ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 3.5.h),
+                  AnimatedSlide(
+                    offset: controller.offset6,
+                    duration: const Duration(milliseconds: 1500),
                     child: ButtonWidget(
-                      hintText: "ACESSAR",
+                      hintText: "CADASTRAR",
                       fontWeight: FontWeight.bold,
                       widthButton: 75.w,
-                      backgroundColor: AppColors().brightBlueColor,
+                      backgroundColor: AppColors().darkBlueColor,
                       onPressed: (){
-                        controller.acessButtonPressed();
+                        controller.registerButtonPressed();
                       },
                     ),
-                  ),
-                  ButtonWidget(
-                    hintText: "CADASTRAR",
-                    fontWeight: FontWeight.bold,
-                    widthButton: 75.w,
-                    backgroundColor: AppColors().darkBlueColor,
-                    onPressed: (){
-                      controller.cadastreButtonPressed();
-                    },
                   ),
                 ],
               ),
@@ -140,9 +188,14 @@ class _WelcomePageState extends State<WelcomePage> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(bottom: 1.h),
-                  child: TextWidget(
-                    controller.appVersion,
-                    fontWeight: FontWeight.bold,
+                  child: AnimatedSlide(
+                    offset: controller.offset7,
+                    duration: const Duration(milliseconds: 1650),
+                    child: TextWidget(
+                      controller.appVersion,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.sp,
+                    ),
                   ),
                 ),
               ],
