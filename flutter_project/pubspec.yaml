@@ -33,12 +33,42 @@ dependencies:
   sqflite: ^2.0.0+3
   path_provider: ^2.0.5
   uuid: ^3.0.5
+  shimmer: ^2.0.0
   responsive_sizer: 3.0.4+4
+  flutter_flavorizr: ^2.0.0
   font_awesome_flutter: ^9.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    ios:
+  flavors:
+    dev:
+      app:
+        name: "You Can Code DEV"
+      android:
+        applicationId: "br.com.example.you_can_code_dev"
+      ios:
+        bundleId: "br.com.example.you_can_code_dev"
+    hmlg:
+      app:
+        name: "You Can Code HMLG"
+      android:
+        applicationId: "br.com.example.you_can_code_hmlg"
+      ios:
+        bundleId: "br.com.example.you_can_code_hmlg"
+    prod:
+      app:
+        name: "You Can Code"
+      android:
+        applicationId: "br.com.example.you_can_code"
+      ios:
+        bundleId: "br.com.example.you_can_code"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

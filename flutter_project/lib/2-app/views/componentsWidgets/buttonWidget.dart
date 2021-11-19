@@ -43,7 +43,8 @@ class ButtonWidget extends StatelessWidget {
         child: TextWidget(
           hintText ?? "",
           textColor: textColor ?? AppColors().whiteColor,
-          fontSize: 16.sp,
+          fontSize: MediaQuery.of(context).orientation == Orientation.portrait ?
+            16.sp : 13.sp,
           fontWeight: fontWeight ?? FontWeight.normal,
         ),
       ),

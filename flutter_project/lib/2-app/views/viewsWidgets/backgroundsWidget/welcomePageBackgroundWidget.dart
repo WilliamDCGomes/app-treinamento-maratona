@@ -11,7 +11,7 @@ class WelcomePageBackgroundWidget extends StatelessWidget {
       children: [
         Image.asset(
           "${Paths().imagesPath}backgroundWelcomePage.png",
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.fill,
           height: 100.h,
           width: 100.w,
         ),
