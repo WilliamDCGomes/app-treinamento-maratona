@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/2-app/helpers/paths.dart';
-import 'package:flutter_project/2-app/helpers/phoneTablet.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class WelcomePageBackgroundWidget extends StatelessWidget {
@@ -12,7 +11,7 @@ class WelcomePageBackgroundWidget extends StatelessWidget {
       children: [
         Image.asset(
           "${Paths().imagesPath}backgroundWelcomePage.png",
-          fit: PhoneTablet().isPhone(context) ? BoxFit.fitHeight : BoxFit.fitHeight,
+          fit: BoxFit.fitHeight,
           height: 100.h,
           width: 100.w,
         ),
