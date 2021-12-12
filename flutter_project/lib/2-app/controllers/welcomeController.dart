@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/2-app/views/pages/loginPage.dart';
 import 'package:get/get.dart';
 
 class WelcomeController extends GetxController {
@@ -64,7 +65,7 @@ class WelcomeController extends GetxController {
   }
 
   accessButtonPressed(){
-
+    Get.to(LoginPage());
   }
 
   registerButtonPressed(){

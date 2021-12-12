@@ -11,6 +11,7 @@ class AppColors {
   final Color whiteColor = Colors.white;
   final Color blackColor = Colors.black;
   final Color blackColor91Percent = const Color(0XFF919191);
+  final Color backgroundStandardColor = const Color(0XFF0D1418);
   final Color grayColor = const Color(0XFFE1E1E1);
   final Color brightBlueColor = const Color(0XFF0079D9);
   final Color darkBlueColor = const Color(0XFF004373);
