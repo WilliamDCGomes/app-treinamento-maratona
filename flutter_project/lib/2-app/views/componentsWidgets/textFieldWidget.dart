@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/2-app/views/stylePages/appColors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class TextFieldWidget extends StatelessWidget {
@@ -80,7 +81,7 @@ class TextFieldWidget extends StatelessWidget {
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide(
-          color: borderColor ?? const Color(0XFFF0F0F0),
+          color: borderColor ?? AppColors().whiteColor,
         ),
       ),
       contentPadding: EdgeInsets.only(
@@ -92,7 +93,7 @@ class TextFieldWidget extends StatelessWidget {
 
   TextStyle standardTextStyle(){
     return TextStyle(
-      color: textColor ?? Colors.black,
+      color: textColor ?? AppColors().whiteColor,
       fontSize: fontSize ?? 17,
     );
   }
