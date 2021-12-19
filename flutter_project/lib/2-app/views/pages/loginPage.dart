@@ -52,9 +52,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     backgroundColor: AppColors().backgroundStandardColor,
                   ),
-                  body: Padding(
-                    padding: EdgeInsets.only(top: 15.h),
-                    child: SingleChildScrollView(
+                  body: SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 15.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
