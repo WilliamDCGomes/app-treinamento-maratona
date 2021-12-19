@@ -7,6 +7,7 @@ class ButtonWidget extends StatelessWidget {
   final String? hintText;
   final double? heightButton;
   final double? widthButton;
+  final double? radioButton;
   final FontWeight? fontWeight;
   final Color? backgroundColor;
   final Color? textColor;
@@ -17,6 +18,7 @@ class ButtonWidget extends StatelessWidget {
         this.hintText,
         this.heightButton,
         this.widthButton,
+        this.radioButton,
         this.fontWeight,
         this.backgroundColor,
         this.textColor,
@@ -36,7 +38,7 @@ class ButtonWidget extends StatelessWidget {
           ),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.h),
+              borderRadius: BorderRadius.circular(radioButton ?? 5.h),
             ),
           ),
         ),

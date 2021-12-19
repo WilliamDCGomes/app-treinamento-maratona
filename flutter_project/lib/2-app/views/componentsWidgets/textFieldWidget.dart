@@ -6,11 +6,13 @@ class TextFieldWidget extends StatelessWidget {
   final String? hintText;
   final int? maxLength;
   final bool? ableField;
+  final bool? isPassword;
   final double? height;
   final double? width;
   final double? fontSize;
   final Widget? iconTextField;
   final Color? textColor;
+  final Color? hintTextColor;
   final Color? borderColor;
   final TextStyle? textStyle;
   final TextAlignVertical? textAlignVertical;
@@ -28,11 +30,13 @@ class TextFieldWidget extends StatelessWidget {
         this.hintText,
         this.maxLength,
         this.ableField,
+        this.isPassword,
         this.height,
         this.width,
         this.fontSize,
         this.iconTextField,
         this.textColor,
+        this.hintTextColor,
         this.borderColor,
         this.textStyle,
         this.textAlignVertical,
@@ -52,6 +56,7 @@ class TextFieldWidget extends StatelessWidget {
       height: height ?? 65,
       width: width ?? 200,
       child: TextField(
+        obscureText: isPassword ?? false,
         maxLength: maxLength,
         style: textStyle ?? standardTextStyle(),
         textAlignVertical: textAlignVertical ?? TextAlignVertical.center,
@@ -76,14 +81,11 @@ class TextFieldWidget extends StatelessWidget {
       hintText: hintText,
       hintStyle: TextStyle(
         fontSize: 2.h,
+        color: hintTextColor ?? AppColors().whiteColor
       ),
       suffixIcon: iconTextField,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(
-          color: borderColor ?? AppColors().whiteColor,
-        ),
-      ),
+      enabledBorder: _getBorderLayout(),
+      border: _getBorderLayout(),
       contentPadding: EdgeInsets.only(
           bottom: heightInput / 2,  // HE
           left: 10// RE THE IMPORTANT PART
@@ -94,7 +96,16 @@ class TextFieldWidget extends StatelessWidget {
   TextStyle standardTextStyle(){
     return TextStyle(
       color: textColor ?? AppColors().whiteColor,
-      fontSize: fontSize ?? 17,
+      fontSize: fontSize ?? 2.h,
+    );
+  }
+
+  OutlineInputBorder _getBorderLayout(){
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(
+        color: borderColor ?? AppColors().whiteColor,
+      ),
     );
   }
 }
