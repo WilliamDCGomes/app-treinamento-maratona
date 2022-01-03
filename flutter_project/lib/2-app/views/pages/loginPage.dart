@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_project/2-app/controllers/loginController.dart';
 import 'package:flutter_project/2-app/helpers/paths.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/buttonWidget.dart';
@@ -23,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     controller = Get.put(LoginController());
+
     return SafeArea(
       child: Material(
         child: GestureDetector(
@@ -99,43 +98,47 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(top: 5.h),
+                                padding: EdgeInsets.only(top: 3.h),
                                 child: ButtonWidget(
+                                  onPressed: (){
+                                    controller.accessButtonPressed();
+                                  },
                                   textColor: AppColors().whiteColor,
                                   backgroundColor: AppColors().greenColor,
                                   hintText: "LOGAR",
                                   fontWeight: FontWeight.bold,
                                   radioButton: 1.h,
-                                  heightButton: 65,
                                   widthButton: 75.w,
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(top: 2.5.h),
                                 child: ButtonWidget(
+                                  onPressed: (){
+                                    controller.registerButtonPressed();
+                                  },
                                   textColor: AppColors().whiteColor,
                                   backgroundColor: AppColors().blueColor,
                                   hintText: "CADASTRAR",
                                   fontWeight: FontWeight.bold,
                                   radioButton: 1.h,
-                                  heightButton: 65,
                                   widthButton: 75.w,
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(top: 1.h),
+                                padding: EdgeInsets.only(top: 1.5.h),
                                 child:
                                 SizedBox(
                                   width: 75.w,
                                   child: GestureDetector(
                                     onTap: (){
-
+                                      controller.forgetPasswordPressed();
                                     },
                                     child: TextWidget(
                                       "Esqueci a senha?",
                                       textColor: AppColors().whiteColor,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 12.sp,
+                                      fontSize: 16.sp,
                                       textAlign: TextAlign.end,
                                       textDecoration: TextDecoration.underline,
                                     ),

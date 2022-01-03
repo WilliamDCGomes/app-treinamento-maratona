@@ -6,6 +6,6 @@ class InitialPageController extends GetxController {
 
   loadFirstScreen(){
     //Configurar para que possa ir direto a tela de menu iniciar
-    Get.to(WelcomePage());
+    Get.to(() => WelcomePage());
   }
 }

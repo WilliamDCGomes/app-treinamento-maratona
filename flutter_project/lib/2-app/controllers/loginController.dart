@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/2-app/views/pages/registerPage.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
@@ -7,9 +8,20 @@ class LoginController extends GetxController {
   late RxBool passwordFieldEnabled;
 
   LoginController(){
+    passwordFieldEnabled = true.obs;
     loginInput = TextEditingController();
     passwordInput = TextEditingController();
-    passwordFieldEnabled = true.obs;
   }
 
+  accessButtonPressed(){
+
+  }
+
+  registerButtonPressed(){
+    Get.to(() => RegisterPage());
+  }
+
+  forgetPasswordPressed(){
+
+  }
 }
