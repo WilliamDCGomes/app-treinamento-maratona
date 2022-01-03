@@ -72,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                                   controller: controller.loginInput,
                                   hintText: "Digite seu login",
                                   width: 75.w,
+                                  keyboardType: TextInputType.name,
                                 ),
                               ),
                               Padding(
@@ -94,6 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                                         color: AppColors().blackColor91Percent,
                                       ),
                                     ),
+                                    keyboardType: TextInputType.visiblePassword,
                                   ),
                                 ),
                               ),
