@@ -70,6 +70,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               controller: controller.nameInput,
                               hintText: "Nome",
                               width: 75.w,
+                              keyboardType: TextInputType.name,
                             ),
                           ),
                           Padding(
@@ -78,6 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               controller: controller.lastNameInput,
                               hintText: "Sobrenome",
                               width: 75.w,
+                              keyboardType: TextInputType.name,
                             ),
                           ),
                           Padding(
@@ -90,6 +92,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 Icons.email,
                                 color: AppColors().blackColor91Percent,
                               ),
+                              keyboardType: TextInputType.emailAddress,
                             ),
                           ),
                           Padding(
@@ -102,6 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 Icons.person_sharp,
                                 color: AppColors().blackColor91Percent,
                               ),
+                              keyboardType: TextInputType.name,
                             ),
                           ),
                           Padding(
@@ -123,6 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     color: AppColors().blackColor91Percent,
                                   ),
                                 ),
+                                keyboardType: TextInputType.visiblePassword,
                               ),
                             ),
                           ),
@@ -145,6 +150,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     color: AppColors().blackColor91Percent,
                                   ),
                                 ),
+                                keyboardType: TextInputType.visiblePassword,
                               ),
                             ),
                           ),
@@ -154,6 +160,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               controller: controller.collegeNameInput,
                               hintText: "Nome da Faculdade",
                               width: 75.w,
+                              keyboardType: TextInputType.name,
                             ),
                           ),
                           Padding(
@@ -162,6 +169,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               controller: controller.courseNameInput,
                               hintText: "Nome do Curso",
                               width: 75.w,
+                              keyboardType: TextInputType.name,
                             ),
                           ),
                           Padding(
@@ -174,6 +182,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 Icons.phone,
                                 color: AppColors().blackColor91Percent,
                               ),
+                              keyboardType: TextInputType.phone,
                             ),
                           ),
                           Padding(
@@ -186,6 +195,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 Icons.phone_android,
                                 color: AppColors().blackColor91Percent,
                               ),
+                              keyboardType: TextInputType.phone,
                             ),
                           ),
                         ],
