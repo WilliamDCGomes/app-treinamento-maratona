@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                                   width: 75.w,
                                   child: GestureDetector(
                                     onTap: (){
-                                      controller.forgetPasswordPressed();
+                                      controller.forgetPasswordPressed(context);
                                     },
                                     child: TextWidget(
                                       "Esqueci a senha?",

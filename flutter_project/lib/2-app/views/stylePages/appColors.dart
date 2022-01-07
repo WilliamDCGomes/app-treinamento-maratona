@@ -12,6 +12,7 @@ class AppColors {
   final Color blackColor = Colors.black;
   final Color transparentColor = Colors.transparent;
   final Color greenColor = const Color(0XFF008001);
+  final Color redColor = const Color(0XFFFF0000);
   final Color blueColor = const Color(0XFF0000FE);
   final Color navigationBarColor = const Color(0XFF0A0F35);
   final Color statusBarColor = const Color(0XFF0A0F37);

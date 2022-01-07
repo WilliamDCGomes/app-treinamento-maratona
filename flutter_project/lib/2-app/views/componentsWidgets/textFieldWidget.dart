@@ -6,6 +6,7 @@ class TextFieldWidget extends StatelessWidget {
   final String? hintText;
   final int? maxLength;
   final bool? ableField;
+  final bool? justRead;
   final bool? isPassword;
   final double? height;
   final double? width;
@@ -30,6 +31,7 @@ class TextFieldWidget extends StatelessWidget {
         this.hintText,
         this.maxLength,
         this.ableField,
+        this.justRead,
         this.isPassword,
         this.height,
         this.width,
@@ -64,6 +66,7 @@ class TextFieldWidget extends StatelessWidget {
         keyboardType: keyboardType ?? TextInputType.text,
         decoration: decoration ?? standardDecoration(),
         enabled: ableField ?? true,
+        readOnly: justRead ?? false,
         onTap: onTap,
         onEditingComplete: onEditingComplete,
         onChanged: onChanged,
