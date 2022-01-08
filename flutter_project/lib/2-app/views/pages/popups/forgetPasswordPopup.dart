@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/2-app/controllers/forgetPasswordPopupController.dart';
+import 'package:flutter_project/2-app/controllers/popupsControllers/forgetPasswordPopupController.dart';
 import 'package:flutter_project/2-app/helpers/paths.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/buttonLoadingWidget.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/textFieldWidget.dart';
