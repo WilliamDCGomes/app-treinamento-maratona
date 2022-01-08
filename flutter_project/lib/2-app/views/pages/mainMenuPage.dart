@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/2-app/controllers/mainMenuController.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/exerciseCardWidget.dart';
+import 'package:flutter_project/2-app/views/componentsWidgets/menuOptionsWidget.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/textWidget.dart';
 import 'package:flutter_project/2-app/views/stylePages/appColors.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -118,6 +120,70 @@ class _MainMenuPageState extends State<MainMenuPage> {
                                       ),
                                     ],
                                   ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 2.h),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    MenuOptionsWidget(
+                                      text: "Exercícios",
+                                      icon: Icon(
+                                        Icons.code_off_sharp,
+                                        color: AppColors().blackColor91Percent,
+                                        size: 6.h,
+                                      ),
+                                    ),
+                                    MenuOptionsWidget(
+                                      text: "Recomendados",
+                                      icon: Icon(
+                                        Icons.recommend_rounded,
+                                        color: AppColors().blackColor91Percent,
+                                        size: 6.h,
+                                      ),
+                                    ),
+                                    MenuOptionsWidget(
+                                      text: "Favoritos",
+                                      icon: Icon(
+                                        Icons.favorite,
+                                        color: AppColors().blackColor91Percent,
+                                        size: 6.h,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 2.h),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    MenuOptionsWidget(
+                                      text: "Resolvidos",
+                                      icon: Icon(
+                                        Icons.done,
+                                        color: AppColors().blackColor91Percent,
+                                        size: 6.h,
+                                      ),
+                                    ),
+                                    MenuOptionsWidget(
+                                      text: "Adicionar",
+                                      icon: Icon(
+                                        Icons.add_circle,
+                                        color: AppColors().blackColor91Percent,
+                                        size: 6.h,
+                                      ),
+                                    ),
+                                    MenuOptionsWidget(
+                                      text: "Pontuação",
+                                      icon: Icon(
+                                        Icons.sports_score_sharp,
+                                        color: AppColors().blackColor91Percent,
+                                        size: 6.h,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Padding(

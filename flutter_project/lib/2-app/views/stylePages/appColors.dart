@@ -11,6 +11,11 @@ class AppColors {
   final Color whiteColor = Colors.white;
   final Color blackColor = Colors.black;
   final Color transparentColor = Colors.transparent;
+  final Color greenCardColor = const Color(0XFF0F4722);
+  final Color blueCardColor = Color(0XFF0D3082);
+  final Color purpleCardColor = Color(0XFF79018B);
+  final Color orangeCardColor = Colors.orange;
+  final Color redCardColor = Color(0XFFA10103);
   final Color greenColor = const Color(0XFF008001);
   final Color redColor = const Color(0XFFFF0000);
   final Color blueColor = const Color(0XFF0000FE);
