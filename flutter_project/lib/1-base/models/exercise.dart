@@ -5,6 +5,7 @@ import 'package:uuid/uuid.dart';
 class Exercise {
   //#region Attributes
   late String id;
+  int? exerciseCode;
   int? difficultyLevel;
   String? title;
   String? siteOrigem;
@@ -39,16 +40,31 @@ class Exercise {
 
   get getImagebackground {
     switch (difficultyLevel) {
-      case 1:
-        return "${Paths().imagesPath}beginnerLevel.jpg";
       case 2:
-        return "${Paths().imagesPath}postBeginnerLevel.jpg";
+        return "${Paths().imagesPath}postBeginnerLevel.png";
       case 3:
-        return "${Paths().imagesPath}intermediateLevel.jpg";
+        return "${Paths().imagesPath}intermediateLevel.png";
       case 4:
         return "${Paths().imagesPath}postIntermediateLevel.png";
       case 5:
         return "${Paths().imagesPath}hardLevel.png";
+      default:
+        return "${Paths().imagesPath}beginnerLevel.png";
+    }
+  }
+
+  get opacityValue {
+    switch (difficultyLevel) {
+      case 2:
+        return 0.5;
+      case 3:
+        return 0.4;
+      case 4:
+        return 0.6;
+      case 5:
+        return 0.6;
+      default:
+        return 0.3;
     }
   }
 

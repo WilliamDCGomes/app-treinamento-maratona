@@ -4,7 +4,6 @@ import 'package:flutter_project/2-app/views/componentsWidgets/exerciseCardWidget
 import 'package:flutter_project/2-app/views/componentsWidgets/menuOptionsWidget.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/textWidget.dart';
 import 'package:flutter_project/2-app/views/stylePages/appColors.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -202,25 +201,21 @@ class _MainMenuPageState extends State<MainMenuPage> {
                               ),
                               Padding(
                                 padding: EdgeInsets.only(top: 1.5.h),
-                                child: SingleChildScrollView(
+                                child: SizedBox(
+                                  height: 20.h,
+                                  width: 100.w,
+                                  child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
-                                    child: Row(
-                                      children: [
-                                        ExerciseCardWidget(title: "Exercício 1",),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 2",),
+                                    itemCount: controller.favoriteExercises.length,
+                                    itemBuilder: (context, index){
+                                      return Padding(
+                                        padding: EdgeInsets.only(right: 2.w),
+                                        child: ExerciseCardWidget(
+                                          exerciseItem: controller.favoriteExercises[index],
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 3",),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 4",),
-                                        ),
-                                      ],
-                                    )
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
                               Padding(
@@ -239,25 +234,21 @@ class _MainMenuPageState extends State<MainMenuPage> {
                               ),
                               Padding(
                                 padding: EdgeInsets.only(top: 1.5.h),
-                                child: SingleChildScrollView(
+                                child: SizedBox(
+                                  height: 20.h,
+                                  width: 100.w,
+                                  child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
-                                    child: Row(
-                                      children: [
-                                        ExerciseCardWidget(title: "Exercício 1",),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 2",),
+                                    itemCount: controller.recommendedExercise.length,
+                                    itemBuilder: (context, index){
+                                      return Padding(
+                                        padding: EdgeInsets.only(right: 2.w),
+                                        child: ExerciseCardWidget(
+                                          exerciseItem: controller.recommendedExercise[index],
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 3",),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 4",),
-                                        ),
-                                      ],
-                                    )
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
                               Padding(
@@ -276,25 +267,21 @@ class _MainMenuPageState extends State<MainMenuPage> {
                               ),
                               Padding(
                                 padding: EdgeInsets.only(top: 1.5.h),
-                                child: SingleChildScrollView(
+                                child: SizedBox(
+                                  height: 20.h,
+                                  width: 100.w,
+                                  child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
-                                    child: Row(
-                                      children: [
-                                        ExerciseCardWidget(title: "Exercício 1",),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 2",),
+                                    itemCount: controller.lastAddedExercises.length,
+                                    itemBuilder: (context, index){
+                                      return Padding(
+                                        padding: EdgeInsets.only(right: 2.w),
+                                        child: ExerciseCardWidget(
+                                          exerciseItem: controller.lastAddedExercises[index],
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 3",),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 2.w),
-                                          child: ExerciseCardWidget(title: "Exercício 4",),
-                                        ),
-                                      ],
-                                    )
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
                             ],
