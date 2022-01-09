@@ -14,6 +14,8 @@ class WelcomePageBackgroundWidget extends StatelessWidget {
           fit: BoxFit.fitHeight,
           height: 100.h,
           width: 100.w,
+          cacheHeight: 700,
+          cacheWidth: 700,
         ),
         Container(
           height: 100.h,

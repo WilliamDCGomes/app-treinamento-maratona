@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/2-app/controllers/loginController.dart';
 import 'package:flutter_project/2-app/helpers/paths.dart';
+import 'package:flutter_project/2-app/helpers/phoneTablet.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/buttonWidget.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/textFieldWidget.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/textWidget.dart';
@@ -32,15 +33,22 @@ class _LoginPageState extends State<LoginPage> {
             color: AppColors().backgroundStandardColor,
             child: Stack(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "${Paths().imagesPath}imagemBackgroundLogin.png",
-                      height: 25.h,
-                      width: 80.w,
-                    ),
-                  ],
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: PhoneTablet().isPhone(context) ? 2.h : 0,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "${Paths().imagesPath}imagemBackgroundLogin.png",
+                        height: 25.h,
+                        width: 80.w,
+                        cacheHeight: 750,
+                        cacheWidth: 1200,
+                      ),
+                    ],
+                  ),
                 ),
                 Scaffold(
                   backgroundColor: AppColors().transparentColor,

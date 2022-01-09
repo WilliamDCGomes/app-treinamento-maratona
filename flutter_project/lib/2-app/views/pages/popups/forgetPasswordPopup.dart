@@ -35,7 +35,7 @@ class _ForgetPasswordPopupState extends State<ForgetPasswordPopup> {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: SizedBox(
-          width: 60.w,
+          width: 75.w,
           child: Stack(
             children: [
               Padding(
