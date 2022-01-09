@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/2-app/controllers/mainMenuController.dart';
+import 'package:flutter_project/2-app/helpers/phoneTablet.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/exerciseCardWidget.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/menuOptionsWidget.dart';
 import 'package:flutter_project/2-app/views/componentsWidgets/textWidget.dart';
@@ -42,6 +43,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextWidget(
@@ -89,7 +91,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                     Padding(
                       padding: EdgeInsets.only(top: 2.h),
                       child: Container(
-                        height: 82.h,
+                        height: 80.h,
                         child: SingleChildScrollView(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -202,7 +204,8 @@ class _MainMenuPageState extends State<MainMenuPage> {
                               Padding(
                                 padding: EdgeInsets.only(top: 1.5.h),
                                 child: SizedBox(
-                                  height: 20.h,
+                                  height: PhoneTablet().isPhone(context) ?
+                                    20.h : 22.h,
                                   width: 100.w,
                                   child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
@@ -235,7 +238,8 @@ class _MainMenuPageState extends State<MainMenuPage> {
                               Padding(
                                 padding: EdgeInsets.only(top: 1.5.h),
                                 child: SizedBox(
-                                  height: 20.h,
+                                  height: PhoneTablet().isPhone(context) ?
+                                    20.h : 22.h,
                                   width: 100.w,
                                   child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
@@ -268,7 +272,8 @@ class _MainMenuPageState extends State<MainMenuPage> {
                               Padding(
                                 padding: EdgeInsets.only(top: 1.5.h),
                                 child: SizedBox(
-                                  height: 20.h,
+                                  height: PhoneTablet().isPhone(context) ?
+                                    20.h : 22.h,
                                   width: 100.w,
                                   child: ListView.builder(
                                     scrollDirection: Axis.horizontal,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/2-app/helpers/phoneTablet.dart';
 import 'package:flutter_project/2-app/views/stylePages/appColors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'textWidget.dart';
@@ -7,6 +8,7 @@ class MenuOptionsWidget extends StatelessWidget {
   final String text;
   final Icon icon;
   final double? widthButton;
+  final double? textSize;
   final FontWeight? fontWeight;
   final Color? textColor;
   final List<Color>? colors;
@@ -17,6 +19,7 @@ class MenuOptionsWidget extends StatelessWidget {
         required this.text,
         required this.icon,
         this.widthButton,
+        this.textSize,
         this.fontWeight,
         this.textColor,
         this.colors,
@@ -40,7 +43,8 @@ class MenuOptionsWidget extends StatelessWidget {
                 child: TextWidget(
                   text,
                   textColor: textColor ?? AppColors().blackColor91Percent,
-                  fontSize: 16.sp,
+                  fontSize: textSize ?? (PhoneTablet().isPhone(context) ?
+                    16.sp : 14.sp),
                   fontWeight: FontWeight.bold,
                 ),
               ),

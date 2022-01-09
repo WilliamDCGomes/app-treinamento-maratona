@@ -86,7 +86,7 @@ class ExerciseCardWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(
-                          width: 46.w,
+                          width: 42.w,
                           child: TextWidget(
                             exerciseItem.authorsComment ?? "",
                             maxLines: 1,
