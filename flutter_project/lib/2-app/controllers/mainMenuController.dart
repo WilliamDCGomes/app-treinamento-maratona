@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
+import 'package:flutter_flavorizr/parser/models/flavors/flavor.dart';
 import 'package:flutter_project/1-base/models/exercise.dart';
 import 'package:get/get.dart';
 
