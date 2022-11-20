@@ -161,12 +161,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  floatingActionButton: FloatingActionButton(
-                    onPressed: () {
-
-                    },
-
-                  ),
                 ),
               ],
             ),

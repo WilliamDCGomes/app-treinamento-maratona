@@ -55,23 +55,23 @@ flavorizr:
       app:
         name: "You Can Code DEV"
       android:
-        applicationId: "br.com.example.you_can_code_dev"
+        applicationId: "com.williamdcgomes.you_can_code_dev"
       ios:
-        bundleId: "br.com.example.you_can_code_dev"
+        bundleId: "com.williamdcgomes.you_can_code_dev"
     hmlg:
       app:
         name: "You Can Code HMLG"
       android:
-        applicationId: "br.com.example.you_can_code_hmlg"
+        applicationId: "com.williamdcgomes.you_can_code_hmlg"
       ios:
-        bundleId: "br.com.example.you_can_code_hmlg"
+        bundleId: "com.williamdcgomes.you_can_code_hmlg"
     prod:
       app:
         name: "You Can Code"
       android:
-        applicationId: "br.com.example.you_can_code"
+        applicationId: "com.williamdcgomes.you_can_code"
       ios:
-        bundleId: "br.com.example.you_can_code"
+        bundleId: "com.williamdcgomes.you_can_code"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
